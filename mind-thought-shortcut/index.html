@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>最近的几个小观点 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">最近的几个小观点</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2019-08-07&nbsp;&nbsp;17:38</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="线下电子支付并没有实际的好处"><a href="#线下电子支付并没有实际的好处" class="headerlink" title="线下电子支付并没有实际的好处"></a>线下电子支付并没有实际的好处</h3><p>最近在搞支付这一块，连续看了支付宝、微信、银联的相关的材料，发现只要涉及到平台交易，就一定会产生手续费。</p>
+<p>像信用卡一样，当我们在一家餐馆消费1000元时，会产生6%左右的手续费，就是60元，这些手续费基本上都是银行、银联、POS发行商户分摊，而餐馆只收到了940元的费用。如果这些是发生在支付宝、微信中的话，餐馆要提出来到银行账户中，还可能会产生一笔提现手续费，商户实际的手续只可能会更低。</p>
+<p>那么，电子钱包支付方式的大行其道，会不会是导致通货膨胀的原因之一呢？</p>
+<p>商户想保证利润，就需要在成本和利润中再添加手续费这一块费用，物品的价格自然而然就会水涨船高，而且人们在使用电子支付时没有那种手里捏着钱的厚重感，即便是几万块，也没有用现金时的忐忑。</p>
+<p>电子支付让人们也变得更傻了。之前，我还会说“天天都是买菜买水果，除了加减乘除，数学还有什么用”这样的问题，现在电子支付连买菜时的简单加减法都已经给免除了，那学数学的作用又要开始被怀疑了。</p>
+<p>电子支付同时也把人之间的关系搞得很没意思，动不动就被要求去发红包。人与人之间的关系已经在考金钱维持了吗？之前即便是金钱关系，见面握手寒暄还是必不可少的，而现在已经是在明目张胆地要求，红包发的少甚至还会被看不起。</p>
+<p>我有时会想，是我脱离了社会进步的节奏，还是社会已经脱离了健康社会发展的轨道了呢？</p>
+<h3 id="宿命论的一点看法"><a href="#宿命论的一点看法" class="headerlink" title="宿命论的一点看法"></a>宿命论的一点看法</h3><p>宿命论听上去可能是一种唯心主义的看法，认为世界的命运是注定的。</p>
+<p>其实，也有一定的科学依据。</p>
+<p>光速是我们宇宙中速度传播的上限，目前可观测到的所有物质都不会超过光速。</p>
+<p>基于这个条件，在观测天文事件的时候，很有可能出现：某X星球事实上已经不存在了，我们还是能通过天文望远镜看到这颗星球。原因就在于，这颗星球在消亡前发出的光还在继续传播，我们通过天文望远镜所看到的这颗星球，可能是在其消亡前几万年之前的样子。就好比太阳如果在下一秒突然消失，我们是要在七分钟以后才能发觉一样。</p>
+<p>那么基于以上，做一个假设：我们地球，包括地球上的一切都只是一个投影，这些投影的源，来自于更高纬度的空间或者宇宙深处，地球的宿命已经被设定，只是沿着光的速度在往前推进而已。</p>
+<p>这只是一个假设，如果你说“既然命运已经注定，我现在要回家玩游戏到玩到老”或者问“我下一秒要做什么，是注定的吗”这样的问题，归根就是想表达自己自由不受约束的意识和意志。可人类的意识和思想，也是这个世界的一部分。当你试图理解世界，“试图理解世界”也成为了世界的一部分，然后“试图理解自己试图理解世界”、“试图理解自己试图理解自己试图理解世界”……无限递归下去。所以我敢说，明天发生的一切事情，都是注定的。</p>
+<p>既然结局早于我们发生，我们唯一能做的就是以超然的态度去履行自己的生命。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/simplified-life/">单一化生活</a>
+            
+            
+            <a class="next" rel="next" href="/publish-my-article/">I Scream</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>在信息不缺乏时，注意力就变得缺乏 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">在信息不缺乏时，注意力就变得缺乏</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-04-21&nbsp;&nbsp;21:41</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>最近我在忙着复试，但是身边的许多事物都会让我转移对学习的注意力，转向去做其他的事情，然而在做其他事情的时候心里还会想着复试，最后这些事情没有一件能做好。</p>
+<h3 id="有限的注意力"><a href="#有限的注意力" class="headerlink" title="有限的注意力"></a>有限的注意力</h3><p>我试着去理解为什么我的注意力转移成本如此之低，以至于随时都能无缝切换到其他事情上去。我渐渐的发现，周围能影响自己的事情太多了，旁边有开着的电脑，虽说是查阅资料的工具，但只要简单敲几下就能去浏览新闻；还有冰箱里的食物、客厅的电视机和ps4、旁边充电的手机、桌子上的其他书籍，都在诱惑着我单薄的注意力，让我难得片刻的专注。当然这大部分的责任在我自身，怪我不能控制住自己。</p>
+<p>这件事情从年后在家办公就开始出现得格外频繁，在家办公这件事情虽然能在一定程度上相比起懒在家里来更体现出一个人的价值，但是家庭中的环境其实并不合适工作，不说周围的娱乐设施，就连地上的一根头发都可能会吸引我去打扫卫生，最后变成把家里都清理一遍，让办公变得毫无效率可言，既浪费了时间又没完成工作。</p>
+<p>我可以举一个反例来证明，在信息不缺乏的时候，人的注意力就会变得缺乏。</p>
+<p>比如你在厕所里，没带手机和任何可读物，你就静坐在马桶上，这时你就开始闲的难受，想找一些东西来阅读，一旦找到文字你就开始格外认真地阅读，就连一张药品说明书说不定都会读上好几遍生怕漏掉什么。在厕所里，你周围的信息是非常匮乏的，除了你大脑能想象的事情之外，什么都没有，一旦找到信息，就开始极为专注地阅读。</p>
+<p>注意力、精力这些人自身所有限的资源，在日常生活中也极具有稀缺性，人总是在有精力有精神的时候去做做比较困难的工作，在疲惫和缺乏精力时去休息或者做简单的工作。具有稀缺性，就需要合理的分配，才能产生最高的价值。</p>
+<h3 id="成瘾性信息依赖导致的浅薄症"><a href="#成瘾性信息依赖导致的浅薄症" class="headerlink" title="成瘾性信息依赖导致的浅薄症"></a>成瘾性信息依赖导致的浅薄症</h3><p>但日常中往往是信息过载的，微信群里随时都有新消息，网站上随时都有新的新闻，脑子里随时都要想做的事情 … 只要开始沉浸于身边的各种信息，就会渐渐染上一种消费型的瘾，就跟烟瘾酒瘾类似，睡醒一觉就马上抓起手机去看在睡觉的时候发生了什么事情，手机只要推送消息就放下手中工作。</p>
+<p>然而，这种碎片化的信息获取，不仅仅会浪费时间和精力，还会让人变得浅薄 —— 这个人好像什么都懂，但是一旦深入谈下去就会发现这个人其实徒有其表。接受范围过广，内容过多的信息，会让人没有时间和精力去挖掘问题，深入理解，只会让你不停地翻页刷新。</p>
+<p>我在地铁上见到过这种人，上车就开始刷抖音刷微博，看完一个笑一笑接着下一个，过了四十分钟到站，说“今天真快啊”。地铁上的环境相对封闭，而获取信息的途径有限，一旦有能满足这种场景的产品，人们一定会乐此不疲，贡献上大把的时间，获得极少的回报，从经济学来讲，成本高而收益低的投入，是一种浪费。</p>
+<h3 id="浅浏览与深阅读"><a href="#浅浏览与深阅读" class="headerlink" title="浅浏览与深阅读"></a>浅浏览与深阅读</h3><p>碎片化的阅读和时间，很难能使人沉浸在阅读体验中，没有思考的阅读是无效的阅读。在身边环绕着各种信息和诱惑中，很难做到读后有感，甚至读完很快就会忘记刚刚做了什么。</p>
+<p>上面的这种情况，我称之为浅浏览，所谓的浏览，就如同我们刷网页一样，刷刷刷几秒钟看完，眼球抓住关键字，几千字的网页就看完了，不需要动脑，不需要用心，也不需要思考，是一种在电脑手机面前杀时间的一种行为。</p>
+<p>而与之相反的，能通过阅读来深入思考，增长知识和技能，能够有所收益的方式我称为深阅读，深阅读能实现时间的复利，能够在一层又一层的阅读中，发掘阅读中作者想表达的观点和想法，吸取他人的想法，完善自己的思想，这是人类能够发展的充分条件。</p>
+<p>总而言之，我自身的问题并非具有普遍性，文中的观点也只是我在为了完善自己观点去寻找到的事例，仅代表个人观点。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/zoom-in&zoom-out/">zoom in / zoom out</a>
+            
+            
+            <a class="next" rel="next" href="/shirnk/">三个和尚没水吃</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

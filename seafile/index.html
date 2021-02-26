@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>自建网盘Seafile | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">自建网盘Seafile</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2018-11-08&nbsp;&nbsp;20:49</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">杂七杂八</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="可怕的在线存储"><a href="#可怕的在线存储" class="headerlink" title="可怕的在线存储"></a>可怕的在线存储</h3><p>百度网盘上经常出现被和谐掉的文件，这其实给我算是一个警钟。所有的文件在百度网盘上，必然都要经过审查，所谓审查就是从头到文地浏览一遍你的文件，即便是放在隐私目录中。</p>
+<p>特别是手机相册备份功能，一开始觉得很方便，自己的手机照片再也不会丢失了。后来，越想越觉得脊背发凉，百度毫不费力气地就知道我长什么样子，我跟谁是好友关系，我在哪里拍的照片…太可怕了。</p>
+<h3 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h3><p>在网上对比了好久，目前有两个最好用的自建网盘工具：Seafile和owncloud。</p>
+<p>但因为owncloud在配置上相对繁琐，于是我就放弃了owncloud，直接奔向<a href="https://www.seafile.com/download/" target="_blank" rel="noopener">Seafile</a></p>
+<h3 id="服务搭建"><a href="#服务搭建" class="headerlink" title="服务搭建"></a>服务搭建</h3><blockquote>
+<p>系统环境 CentOS7 MySQL 5.6 Python 2.7</p>
+</blockquote>
+<p>如果只是自己用，建议使用<a href="https://download.seafile.com/d/6e5297246c/?p=/pro&mode=list" target="_blank" rel="noopener">Seafile Pro</a>，3用户以下免费使用。相比起普通版增加了很多功能。</p>
+<p>以下为下载目录</p>
+<p><img src="/assets/images/blog-seafile/file-list.png" alt="file list"></p>
+<p>以下为安装步骤，按提示安装即可</p>
+<p><img src="/assets/images/blog-seafile/progress-1.png" alt="progress1"><br><img src="/assets/images/blog-seafile/progress-2.png" alt="progress2"><br><img src="/assets/images/blog-seafile/progress-3.png" alt="progress3"></p>
+<p>安装完毕！</p>
+<p>进入到seafile目录中，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./seafile.sh start</span><br><span class="line">./seahub.sh start</span><br></pre></td></tr></table></figure>
+
+<p>网盘成功启动！</p>
+<h3 id="外网访问"><a href="#外网访问" class="headerlink" title="外网访问"></a>外网访问</h3><p>哈哈哈，在局域网中的网盘是不是感到很鸡肋？没关系，我们可以把它发布到公网上，让你在任意时候可以自己访问自己的网盘文件。</p>
+<blockquote>
+<p>所需工具 花生壳</p>
+</blockquote>
+<p><a href="https://oray.com/" target="_blank" rel="noopener">花生壳</a> 提供了一个动态地址转换域名。因为我们的家庭宽带地址是不停变化的(专线的话可以忽略这一部分)，如果不停地去查找自己的IP地址，也不方便我们使用自己的网盘。于是我选择了花生壳，将自己的路由绑定上一个静态的域名。</p>
+<p>然后，找到路由器中<strong>端口转发</strong>功能，打开一下端口：</p>
+<ul>
+<li>8000</li>
+<li>8082</li>
+<li>10001</li>
+<li>12001</li>
+</ul>
+<p>并将这四个端口转发到局域网网盘机器的端口上。</p>
+<p>如果有自己的域名，可以设置<strong>CNAME</strong>来解析到花生壳域名上。</p>
+<p>这时，公网访问你的域名+8000端口(例 <a href="http://www.abc.com:8000" target="_blank" rel="noopener">www.abc.com:8000</a> )，即可正常登入网盘。</p>
+<p><img src="/assets/images/blog-seafile/seafile.png" alt="successful"></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/"># 小工具</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/story-of-door/">邪邪的梦：门后的世界</a>
+            
+            
+            <a class="next" rel="next" href="/json-web-token/">Json Web Token 简单实现</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

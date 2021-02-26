@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>查理芒格1986年哈佛大学演讲笔记 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">查理芒格1986年哈佛大学演讲笔记</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-01-20&nbsp;&nbsp;11:36</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>最近在读《穷查理宝典》，查理在公众场合露面极少，演讲也屈指可数，读完他于1986年在哈佛大学的演讲后，感触良多，字字句句中都蕴含着查理为人的哲学理念，我把我的想法整理成了一篇笔记。</p>
+<p>查理·芒格,生于1924年1月1日。他是股神巴菲特的人生导师与生意合作伙伴,是当今最伟大的投资家，思想家。世界第五大上市公司伯克希尔·哈撒韦的副主席,该公司成立50多年来，一直保持着20%左右的年复合增长率，查理·芒格就是这个奇迹的缔造者之一。查理通过学习各个学科的知识，将这些知识编织成为思维模型，在对企业评估时不单纯从财务报表单一维度进行评估，还夹杂有生物学、物理学、哲学等各方面的评估，这种思维成了查理成功底层的基石。</p>
+<p>1986年查理芒格在洛杉矶哈佛大学发表了“我这辈子唯一的演讲”。演讲以“如何保证过上痛苦的生活”为题，给出了四个行之非常有效的建议。约翰尼·卡森（美国著名主持人，曾在美国国家广播公司(NBC)）在哈佛大学演讲过同样的主题，卡森说他无法告诉毕业的同学如何才能得到幸福，但能够根据个人经验，告诉他们如何保证自己过上痛苦的生活。</p>
+<h2 id="卡森的演讲"><a href="#卡森的演讲" class="headerlink" title="卡森的演讲"></a>卡森的演讲</h2><p>巴菲特在一篇文章中提到过“要防止自己爆掉，只要自己活的够久，就有能遇到合适的机会，就有更多的可能性”，而卡森恰恰从反面举了容易让自己爆掉的三个点。</p>
+<h3 id="为了改变心情或者感觉而使用化学物质"><a href="#为了改变心情或者感觉而使用化学物质" class="headerlink" title="为了改变心情或者感觉而使用化学物质"></a>为了改变心情或者感觉而使用化学物质</h3><p>这条非常容易理解，借酒消愁我们都经历过，在酒精的作用下短暂地忘记了遇到的各种艰难和不顺。但也有人会因此堕落在酒精之中，天天醉生梦死嗜酒成性，这样的人生能不痛苦吗？</p>
+<h3 id="妒忌"><a href="#妒忌" class="headerlink" title="妒忌"></a>妒忌</h3><p>妒忌则会让人失去自我，一味的看到别人的成就并且贬低自己，甚至看不得别人过得比自己更好，天天在痛苦中挣扎。</p>
+<h3 id="怨恨"><a href="#怨恨" class="headerlink" title="怨恨"></a>怨恨</h3><p>怨恨则是比起妒忌来更猛地一剂让自己过得更加痛苦的药，有些人总是在抱怨生活不公，命运不平，给他们的总比身边的人少，自己什么都没有付出只是在想得到，让自己徒添诸多烦恼和悔恨，因而因怨生恨。<br>约翰逊讲到一句至理名言：生活本已艰辛得难以下咽，何必再将它塞进怨恨的苦涩果皮里呢？</p>
+<h2 id="查理给出的四味药"><a href="#查理给出的四味药" class="headerlink" title="查理给出的四味药"></a>查理给出的四味药</h2><p>查理同样也是在相同的主题，但他用自己独特的修辞和幽默，对于“如何保证过上痛苦的生活”给出了新的方法。</p>
+<h3 id="第一，要反复无常，不要虔诚地做你正在做的事。"><a href="#第一，要反复无常，不要虔诚地做你正在做的事。" class="headerlink" title="第一，要反复无常，不要虔诚地做你正在做的事。"></a>第一，要反复无常，不要虔诚地做你正在做的事。</h3><p>这味药会让你之前各个方面的优点所产生的正面的效应很快衰减到0，任何一个懂得坚持的人，甚至是极为普通但很勤的人，都能很快地超过你，最后变得无法企及。<br>这一味药，其实是在讲坚定和坚持，才不会被时代抛弃，才能在机会日渐减少的时候，拥有超乎他人的竞争力。</p>
+<p>让我联想到一句略带有鸡汤味的话，跟主题有点远。<br><strong><em>大多数人的勤奋程度，还根本轮不到拼天赋。</em></strong></p>
+<p>我听到过一个方文山先生的采访，方先生讲到了他年轻创作的艰辛历程，以及能从众多人中脱颖而出的勤奋。方先生讲诉了一个简单而质朴的道理——哪怕是创作，其实也是一种需要耐心、认真、坚持、周而复始的工作。</p>
+<p>查理用龟兔赛跑来比喻了这味药带来效果：<br>养成这个习惯，你们将会永远扮演寓言里那只兔子的角色，只不过跑得比你们快的不再只是一只优秀的乌龟，而是一群又一群平庸的乌龟，甚至还有些拄拐杖的平庸乌龟。</p>
+<h3 id="第二味药是，尽可能从你们自身的经验获得知识，尽量别从其他人成功或失败的经验中广泛地吸取教训，不管他们是古人还是今人。"><a href="#第二味药是，尽可能从你们自身的经验获得知识，尽量别从其他人成功或失败的经验中广泛地吸取教训，不管他们是古人还是今人。" class="headerlink" title="第二味药是，尽可能从你们自身的经验获得知识，尽量别从其他人成功或失败的经验中广泛地吸取教训，不管他们是古人还是今人。"></a>第二味药是，尽可能从你们自身的经验获得知识，尽量别从其他人成功或失败的经验中广泛地吸取教训，不管他们是古人还是今人。</h3><p>这味药会让你在遇到各个难题的时候，都毫无思绪，重蹈前人显而易见的覆辙，只身前行。</p>
+<p>李世民有句传世佳话“以人为镜，可以知得失；以史为镜，可以知兴替”，以别人的经验和经历作为自己在遇事时的警示，通过他人的方法来找出解决问题的思路，会让你在前人的基础上，走得更远。</p>
+<p>我也听到过很多反驳这个道理的话，比如“我们所有的经历都不一样，凭什么对我指指点点”，“互联网时代下中国传统国学的意义何在？”等此类反历史主义反经验主义的文章。但是，当我读到陆游“早岁那知世事艰，中原北望气如山”，读到中庸里面“喜怒哀乐之未发谓之中，发而皆中节谓之和”，了解了王阳明的知行合一哲学体系，拜读了胡适对于西洋文明的态度，同样也有国外卡拉马佐夫式的深刻与人性的悲剧故事，人间失格中的婉转而痛苦心理历程 … 都是在作为一中理性的循循善诱在传授一种处世哲学和待事方法。我想反驳说，能对于这些经验都感觉不到丝毫意义的人而言，这味药的功效在于让你得到尽可能少的教育。</p>
+<h3 id="第三味药是，当你们在人生的战场上遭遇第一、第二或者第三次严重的失败时，就请意志消沉，从此一蹶不振吧。"><a href="#第三味药是，当你们在人生的战场上遭遇第一、第二或者第三次严重的失败时，就请意志消沉，从此一蹶不振吧。" class="headerlink" title="第三味药是，当你们在人生的战场上遭遇第一、第二或者第三次严重的失败时，就请意志消沉，从此一蹶不振吧。"></a>第三味药是，当你们在人生的战场上遭遇第一、第二或者第三次严重的失败时，就请意志消沉，从此一蹶不振吧。</h3><p>这个人生的战场，我个人认为不光是外界的遭遇，还有在内心的纠结。</p>
+<p>被事情所击倒太容易了，人的力量极为有限，公司谈判的失败，经济状况的萧条，工作不如意的打击，亦或者是病痛的侵袭，都会让人产生消沉的念头。</p>
+<p>人的弹性和韧性都能超乎意料，查理在演讲开头的时候提到，他失败的次数很多，痛苦很多，痛苦的方式也很多。从很多自带闪光的人身上都能看到这一点，比如扛起家庭压力的父亲，刻苦学习的学生、有坚定目标的青年 … 一次接着一次地遭遇战，接二连三的打压。怨天尤人么？满地打滚么？资料撕碎扔垃圾桶么？如果满地打滚有用，现在全人类可能都在打滚。</p>
+<p>其实我比谁都相信努力奋斗的意义，我就在身边见到过太多的人，通过自己的努力经历过无数次击倒。努力是从狭隘的生活中跳出、从荒芜的环境中离开的一条最行之有效的路径。</p>
+<h3 id="最后一味药是，请忽略小时候人们告诉我的那个乡下人故事。曾经有个乡下人说：“要是知道我会死在哪里就好啦，那我将永远不去那个地方。”"><a href="#最后一味药是，请忽略小时候人们告诉我的那个乡下人故事。曾经有个乡下人说：“要是知道我会死在哪里就好啦，那我将永远不去那个地方。”" class="headerlink" title="最后一味药是，请忽略小时候人们告诉我的那个乡下人故事。曾经有个乡下人说：“要是知道我会死在哪里就好啦，那我将永远不去那个地方。”"></a>最后一味药是，请忽略小时候人们告诉我的那个乡下人故事。曾经有个乡下人说：“要是知道我会死在哪里就好啦，那我将永远不去那个地方。”</h3><p>故事看来比较像一个打趣的笑话，深思后，感到并非笑话这么简单。反向思考，时时刻刻都要反向思考！</p>
+<p>要想过得好，先了解怎么定义过得不好，就可以在日常中避开这些不好的方面，专注向好的方面前进。这显而易见的通俗道理么，然而我就没想到。</p>
+<p>19的奥斯卡影片《波西米亚狂想曲》中，Freddie Mercury的父亲，用”Good word, Good deed and Deep thought“言传身教来教育年幼的Freddie。深入的思考，考虑到可能出现的各种情况，综合各个方面再决定和判断。这种思考模型虽然成就不了大师，但能在利害选择中，把害降到最小，用经济学的话来讲就是把不可控损耗降到最低。</p>
+<p>最后，用查理在演讲的结尾来做为此篇笔记的结尾。<br>愿你们在漫长的人生中日日以避免失败为目标而成长。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%9F%A5%E7%90%86%E8%8A%92%E6%A0%BC/"># 查理芒格</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/icon-systems-for-the-web/">web开发中icon系统深度指南</a>
+            
+            
+            <a class="next" rel="next" href="/translate-micro-startup-project-aquired-22k/">我的微型创业项目被2.2万美元收购</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

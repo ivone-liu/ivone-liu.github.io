@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>web开发中icon系统深度指南 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">web开发中icon系统深度指南</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-01-25&nbsp;&nbsp;17:43</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E8%AF%91%E6%96%87/">译文</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>Icon是web开发中很常见的元素。icon的采用很普遍，其易被识别的特征，可以用来吸引、警告用户，并且（如果运用恰当）能在很大程度上提高用户体验。</p>
+<p>我们在web中运用icon的时候，选择其实极为有限。</p>
+<ul>
+<li>Icon Spritesheet</li>
+<li>Icon字体</li>
+<li>内联svg</li>
+<li>svg图片元素</li>
+</ul>
+<p>这些都是今天常用的方式，就好比SVG元素和icon字体。在这篇文章中，我们会深入研究web开发中每一种icon的方法，并且会研究哪一种方法的性能最优。</p>
+<h2 id="Icon-Spritesheet"><a href="#Icon-Spritesheet" class="headerlink" title="Icon Spritesheet"></a>Icon Spritesheet</h2><p>我们通过许多小的图片（icon图片文件）合并为一份大文件的方式创建icon spritesheet，会用到CSS background-image,background-size和background-position的方法从icon spritesheet中展示图片。</p>
+<p><img src="/assets/images/icon-systems-for-the-web/icon.png" alt="Spritesheet example"></p>
+<p><text align="center" font-size="12px">Spritesheet样例</text>&gt;</p>
+<p>我们可以采用SVG spritesheet来确保在每种显示器上都可以正常展示（普通显示器和Retina显示器）并且可以结合PNG spritesheet作为旧版本浏览器的候选方案。我们可是使用JavaScript库比如Modernizr来侦测用户的浏览器是否能支持SVG，在不支持的情况下以PNG作为备选。</p>
+<p>我们来创建一个可行的icon</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span> <span class="attr">class</span>=<span class="string">"icon icon--email"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"hidden--visually"</span>&gt;</span>Send me an Email<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>spritesheet CSS例子（可以复制或者手动键入）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span> &#123;   </span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'../images/spritesheet.svg'</span>);   </span><br><span class="line">	<span class="attribute">background-repeat</span>: no-repeat;   </span><br><span class="line">	<span class="attribute">display</span>: inline-block;   </span><br><span class="line">	<span class="attribute">width</span>: <span class="number">64px</span>;   <span class="attribute">height</span>: <span class="number">64px</span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="selector-class">.no-svg</span> <span class="selector-class">.icon</span> &#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'../images/spritesheet.png'</span>); </span><br><span class="line">&#125; </span><br><span class="line"><span class="selector-class">.icon--email</span> &#123;   </span><br><span class="line">	<span class="attribute">width</span>: <span class="number">64px</span>;   </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">64px</span>;   </span><br><span class="line">	<span class="attribute">background-position</span>: <span class="number">0px</span> <span class="number">0px</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果你还在想CSS样式<strong>hidden–visually</strong>是如何隐藏内容的，我在其他一篇我之前的文章中介绍过。</p>
+<p>我们一起来评价使用icon spritesheet的优点和缺点吧。</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>增加icon的过程可以很容易被自动化</li>
+<li>图片优化技术能给压缩spritesheet文件的体积</li>
+<li>能在所有显示器中正常显示（当SVG spritesheet可用的时候）</li>
+<li>非常不错的浏览器支持（当PNG做备用方案时）</li>
+<li>减少请求的次数（当HTTP/2不被使用的时候）</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>在盒状模型外不可使用。只有在手动添加额外的HTML元素时可用。</li>
+<li>很糟糕的样式</li>
+<li>所有的icon的变化都需要作为单独的元素添加到spritesheet中。</li>
+<li>在多人协作中同时添加新的icon时容易出现冲突。</li>
+<li>在使用HTTP/2的时候没有任何性能优势。</li>
+</ul>
+<h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><ul>
+<li><a href="http://www.spritecow.com/" target="_blank" rel="noopener">Sprite Cow</a> - 在线spritesheet图片、CSS生成器。</li>
+<li><a href="https://www.npmjs.com/package/postcss-lazysprite" target="_blank" rel="noopener">PostCSS-lazysprite</a> - 自动化spritesheet图片和CSS生成器的PostCSS插件。</li>
+<li><a href="https://www.npmjs.com/package/gulp-svg-sprite" target="_blank" rel="noopener">gulp-svg-sprite</a> - 自动化spritesheet图片和CSS生成器的Gulp插件。</li>
+</ul>
+<h2 id="Icon字体"><a href="#Icon字体" class="headerlink" title="Icon字体"></a>Icon字体</h2><p>我们可以制作包含着所需icon的字体文件来替单一的将icon合并成图片文件的方法。浏览器会将icon的字体文件当作样式更加友好文字样式来处理。</p>
+<p>有许多制作和管理icon字体、CSS的工具，生成的CSS文件会如下。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Define font icon font family */</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">@font-face</span> &#123;     </span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">'myIconFont'</span>;     </span><br><span class="line">	<span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'/path/to/myIconFont.ttf?r9c57c'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),         </span><br><span class="line">	<span class="built_in">url</span>(<span class="string">'/path/to/myIconFont.woff?r9c57c'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),         </span><br><span class="line">	<span class="built_in">url</span>(<span class="string">'/path/to/myIconFont.svg?r9c57c#myIconFont'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);     </span><br><span class="line">	<span class="attribute">font-weight</span>: normal;     </span><br><span class="line">	<span class="attribute">font-style</span>: normal; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">/* Define icon class that sets font family and shared font styles */</span> </span><br><span class="line"></span><br><span class="line"><span class="selector-class">.icon</span> &#123;     </span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">'myIconFont'</span>;     </span><br><span class="line">	<span class="attribute">speak</span>: none;     </span><br><span class="line">	<span class="attribute">font-style</span>: normal;     </span><br><span class="line">	<span class="attribute">font-weight</span>: normal;     </span><br><span class="line">	<span class="attribute">font-variant</span>: normal;     </span><br><span class="line">	<span class="attribute">text-transform</span>: none;     </span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">1</span>;     </span><br><span class="line">	<span class="attribute">-webkit-font-smoothing</span>: antialiased;     </span><br><span class="line">	<span class="attribute">-moz-osx-font-smoothing</span>: grayscale; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">/* Define individual icon class that inserts the icon as a character in pseudo-element */</span> </span><br><span class="line"></span><br><span class="line"><span class="selector-class">.icon--email</span><span class="selector-pseudo">::before</span> &#123;     </span><br><span class="line">	<span class="attribute">content</span>: <span class="string">'\e900'</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们来实现一个icon效果</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span> <span class="attr">class</span>=<span class="string">"icon icon--email"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"hidden--visually"</span>&gt;</span>Send me an Email<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>下面是使用icon字体的优点和缺点。</p>
+<h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>更好的优化效果</li>
+<li>可以在许多的工具中编辑和生成</li>
+<li>非常友好的浏览器支持</li>
+<li>易于使用</li>
+</ul>
+<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>字体的抗锯齿效果可能会对icon的渲染产生一定的影响</li>
+<li>在字体文件下载和加载的时候，页面上可能什么都不会显示</li>
+<li>在用户使用额外字体或者样式重写的时候很容易被覆盖掉</li>
+<li>在盒状模型外不可使用。只有在手动添加时可用</li>
+</ul>
+<h4 id="工具-1"><a href="#工具-1" class="headerlink" title="工具"></a>工具</h4><ul>
+<li><a href="https://icomoon.io/" target="_blank" rel="noopener">icomoon</a> - 管理和生成icon字体文件和CSS文件</li>
+<li><a href="http://fontello.com/" target="_blank" rel="noopener">fontello</a> - 管理和生成icon字体文件和CSS文件</li>
+<li><a href="https://www.npmjs.com/package/icon-font-generator" target="_blank" rel="noopener">icon-font-generator</a> - 将SVG文件转化为icon字体文件的NPM插件</li>
+</ul>
+<h2 id="内联SVG-icon"><a href="#内联SVG-icon" class="headerlink" title="内联SVG icon"></a>内联SVG icon</h2><p>相比起引入某些文件（spritesheet或者icon字体）的方法，我们可以直接将SVG数据嵌入到HTML文档中，浏览器会解析和展示SVG元素，由于我们可以单独设置每一个元素的样式，所以内联SVG元素是高度可定制的。</p>
+<p>我们来看一个使用内联式SVG的代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">labelledby</span>=<span class="string">"titleId descId"</span> <span class="attr">role</span>=<span class="string">"group"</span>&gt;</span>     </span><br><span class="line"><span class="tag">&lt;<span class="name">title</span> <span class="attr">id</span>=<span class="string">"titleId"</span>&gt;</span>Example title<span class="tag">&lt;/<span class="name">title</span>&gt;</span>     </span><br><span class="line"><span class="tag">&lt;<span class="name">desc</span> <span class="attr">id</span>=<span class="string">"descId"</span>&gt;</span>Long description explaining this example<span class="tag">&lt;/<span class="name">desc</span>&gt;</span>     </span><br><span class="line"><span class="comment">&lt;!-- SVG icon code --&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们使用标签为“titleId descId”作为SVG元素的标题和说明，会让元素对于辅助设备来说更加友好。将role设置为”presentation”也非常重要，因为这样会更加突出SVG的图形部分，并且被辅助设备忽略。</p>
+<p>我们一起来评价使用内联SVG的优点和缺点吧。</p>
+<h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>与HTML同步加载，不需要额外的载入时间</li>
+<li>没有额外的HTTP请求</li>
+<li>具有良好可读性，无需额外HTML元素支持</li>
+<li>在不同显示器的解析度中效果都不错</li>
+<li>就样式选择来说是最优的（甚至可以为<code>&lt;svg&gt;</code>元素设置样式）</li>
+</ul>
+<h4 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>复杂的HTML文档标记（取决于使用的框架）</li>
+<li>难以管理和维护（同样也取决于使用的框架）</li>
+<li>icon不会被浏览器缓存</li>
+<li>许多旧版本（或者很少使用）的浏览器不支持内联SVG</li>
+</ul>
+<p>许多框架让icon的管理和维护变得容易。比如说，Webpack会生产版本中将所有在”/path/to/myIcon.svg”引入的文件转变为内联SVG。对于开发人员来说，更加便于管理项目。</p>
+<h2 id="svg图片元素"><a href="#svg图片元素" class="headerlink" title="svg图片元素"></a>svg图片元素</h2><p>我们可以用<code>&lt;img&gt;</code>元素来引入单独的SVG文件，而不是一个<code>&lt;svg&gt;</code>标签。这可以让文件更小而且更加简便而且更加易于维护。</p>
+<p>我们用这种方法写一个icon</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"email.svg"</span> <span class="attr">alt</span>=<span class="string">"Send me an email"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们可以用srcset标记来设置旧版本浏览器的备用方案。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"email.png"</span> <span class="attr">alt</span>=<span class="string">"Send me an email"</span> <span class="attr">srcset</span>=<span class="string">"email.png"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>支持srcset标记的浏览器同时也会支持SVG元素，而且能自动载入SVG图片。对于不支持此标记的浏览器会自动加载PNG备用方案。</p>
+<p>来看一下使用内联SVG图片元素的优点和缺点。</p>
+<h4 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>标签简单</li>
+<li>内建简单且可读性高的alt标记的</li>
+<li>不错的浏览器兼容（如果PNG备用方案可用）</li>
+<li>可以压缩的图片文件</li>
+<li>图片文件可以被浏览器缓存（仅需一次下载）</li>
+</ul>
+<h4 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>很糟糕的样式</li>
+<li>不同的icon（比如不同颜色）需要载入不同的文件</li>
+<li>每一个icon需要许多次请求（在没有缓存的情况下）</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
+                    
+                        <a href="/tags/%E7%BF%BB%E8%AF%91/"># 翻译</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/monthly-extract-jan-2020/">月份阅读摘录202001</a>
+            
+            
+            <a class="next" rel="next" href="/Charlie-Munger-speech-in-1986-notes/">查理芒格1986年哈佛大学演讲笔记</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>zoom in / zoom out | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">zoom in / zoom out</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-04-29&nbsp;&nbsp;21:30</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>相机的镜头，当镜头缩进去时，相机所能拍摄的范围增大，拍摄出的照片所能看到的景色也更广；反过来当镜头伸出，拍摄物往往就能聚焦于某一点，精细地去拍摄一部分的景色。</p>
+<p>前苹果CEO斯卡利就运用这种方法来聚焦于自己的事业，带领苹果公司发展。我要插一句，尽管斯卡利带领苹果最后被开除，但这不代表斯卡利的能力认知和格局存在问题，只是在错误的时间被董事会安排到了错误的岗位，但是他做的决策依然是高瞻远瞩。</p>
+<h3 id="抽象与聚焦"><a href="#抽象与聚焦" class="headerlink" title="抽象与聚焦"></a>抽象与聚焦</h3><p>我们可以把日常的生活平铺在一张纸张，可以看到我们当天在通勤上花费了多少时间，在工作上解决了多少事务，在同事交往中谈论了什么话题，躺在沙发上看了哪些电视节目 …</p>
+<p>当这些事情被平铺，一天的事务就展示在眼前，可以清晰地看到时间和精力的分布，对比投入的资源量和收益，就能得出一天的收益分布情况。比如，我看了两小时电视哈哈哈笑完了，我的付出了两小时的时间和一部专注力，最终收益几乎为零；我花半小时阅读了自己专业领域的一篇论文获益匪浅，运用到工作中能提高近20%的效率 …. 这就是zoom in。</p>
+<p>抽象法，就是将zoom in的事务，抽象出最重要的变量上面，将其他的事务简化或者去掉，从而能聚焦于某一领域或是一项事业中。</p>
+<h3 id="事业与事务"><a href="#事业与事务" class="headerlink" title="事业与事务"></a>事业与事务</h3><p>我们日常的执行工作，基本上都是沉浸在各项事务中。如帕金森定律讲到的：工作会自动膨胀，直至占用所有的时间。</p>
+<p>事务是会不停的膨胀的，在执行中往往是多个事务存在着相关性，当决策者决定调整部分公司业务时，细小的变动也会导致事务中相关领域的调整，执行者就在不停的忙碌中耗费掉自己所有的时间和精力。</p>
+<p>当执行者无法抽象出专注的领域和内容，也就无法作出最合适的资源分配，资源分配的不恰当就会导致最终目标的偏离。</p>
+<p>对日常的事务抽丝剥茧，抽象出关键目标，把目标组成事业，对关键目标进行有效管理，对资源合理分配，是从事务中脱身重新思考事业的必要条件。</p>
+<p>事务与事业的区别，只有一点，你的目标会不会随着任务的变化而发生变化。</p>
+<h3 id="初心与出离心"><a href="#初心与出离心" class="headerlink" title="初心与出离心"></a>初心与出离心</h3><p>在做事之前，我们每个人都会许下一个愿望，设定一个乐观的目标，这就是一种初心，初心是一种宏大的愿望、目标，是对未来的一种预期，也是对当前执行力的鞭策。</p>
+<p>但是很多人，在寻求初心的途中，因为太多的艰辛或者是诱惑，就去寻找简单的道路或者温柔乡，离初心的道路越来越远，还美其名曰人是会改变的，相比起之前现在我已经成熟、现实多了。这种难以坚持的态度，是无法承受延迟满足中的压力，也不会体会到最终果实的甘美。</p>
+<p>如果，我们能在寻求初心的时候，能适当地跳出自己所处的范围，以一种外人的眼光来审视自己做的事情。就好比说，我在创业，努力地将自己的项目落地并且实现增长，可我也要想到，我有一天会离开我创办的公司，那我是为什么会离开呢？是业务增长乏力吗？还是产品欠打磨，太过于粗糙？我考虑到了未来我离开公司的原因，那我就要努力地让这些事情避免发生，为了初心而不停地去思考，去执行。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/domiance-of-poverty-by-app/">App支配下的贫穷</a>
+            
+            
+            <a class="next" rel="next" href="/superficial/">在信息不缺乏时，注意力就变得缺乏</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

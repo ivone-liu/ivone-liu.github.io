@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>跨部门团队模式研究 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">跨部门团队模式研究</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-10-11&nbsp;&nbsp;21:59</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%AE%A1%E7%90%86/">管理</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>观察了一段时间的公司业务流程以及业务推进的方式，发现各职能部门之间的巨大割裂，同一个工作如果在不同部门间流转，效率就会变的无比低下，因此我设想出了一种跨部门的组织结构方式。 </p>
+</blockquote>
+<p>在公司业务范围逐渐扩大的过程中，随着产品线的不断丰富，市场间的差异性需求对技术创新能力要求的不断提高，同周期内研发的项目数量也在增加，但研发周期却被不断压缩。基于上述场景，在不大范围扩大技术研发部门的前提下，目前的公司组织结构与市场需要之间的矛盾愈加显现，在公司组织中主要反映出来的问题有如下两点：</p>
+<p>一是各部门之间因职能化而愈加分裂。部门的职能性变强，员工的职能意识就会加重，部门之间的门槛就越高，就会造成部门间更多的沟通不畅。</p>
+<p>二是公司核心产品体量变重。公司在加大了对产品的基础设施研发投入的同时，也会因来自各个部门的需求使得产品的研发周期拉长，这就会使得在面临市场短期变化或需求时，难以及时响应市场。</p>
+<p>本文主要论述在现有的组织结构下组建跨部门团队的优势，以及对如何提高组织机构的运作效率，同时详细分析作为研发部门的重要资源以及跨部门团队的成员 —— 知识型员工的特点与管理方式。</p>
+<h3 id="研究跨部门团队的意义"><a href="#研究跨部门团队的意义" class="headerlink" title="研究跨部门团队的意义"></a>研究跨部门团队的意义</h3><p>由于项目的管理能力、沟通效果、资源配置等因素的造成工作效率低下和项目团队管理不当，特别是需要公司内部多部门参与的项目，造成了项目滞后、甚至项目的失败。</p>
+<p>如何发挥跨部门之间知识型员工在团队中的互补作用；如何克服成员不同语言差异之间的障碍；如何整合来自不同专业方向的能力，是目前社会关系、企业关系的核心问题之一。</p>
+<h2 id="一-职能模式与跨部门模式分析"><a href="#一-职能模式与跨部门模式分析" class="headerlink" title="一 职能模式与跨部门模式分析"></a>一 职能模式与跨部门模式分析</h2><h3 id="1-1-基于职能式的产品研发模式"><a href="#1-1-基于职能式的产品研发模式" class="headerlink" title="1.1 基于职能式的产品研发模式"></a>1.1 基于职能式的产品研发模式</h3><p>所谓职能式就是指工作从一个部门转到另一个部门来完成，没有明确的项目经理。产品研发计划是在市场经理、技术经理和各部门经理或是领导层之间确定的，各部门研发工作的传递依靠的是系统机制。</p>
+<p>在这种情况下，员工的归属感很强，也就有了工作中常见的回答方式 —— “这事情我说了不算，你需要跟我们领导确认下”。</p>
+<p>这种模式的问题是存在部门壁垒，跨部门衔接比较慢，项目需求、周期、质量、成本在项目管理过程中不可控。实际的产品研发周期中，各部门都各司其职，相互独立互不干涉。关键问题通常出现在跨部门沟通的时，可能会因沟通效果、需求明确度等等，导致产品研发周期漫长甚至就此终结。最终让参与产品研发的每一个成员感到泄气，更甚会产生对对方部门的怀疑。</p>
+<h3 id="1-2-基于职能的产品研发模式存在的弊端"><a href="#1-2-基于职能的产品研发模式存在的弊端" class="headerlink" title="1.2 基于职能的产品研发模式存在的弊端"></a>1.2 基于职能的产品研发模式存在的弊端</h3><p>1 职能式组织结构确保了组织的稳定，但于各职能部门之间缺少必要的沟通，导致产品研发的信息只能在职能部门内部得到有效地执行或传达。</p>
+<p>2 由于各职能部门缺少有效沟通，各职能部门都对产品研发进度缺少整体感 , 只是”各扫门前雪“，这就导致了很多时候需要等到前一阶段的确认完成后，才能获取下一阶段工作的信息。</p>
+<p>3 各职能部门关心的是项目任务分工，对于产品研发过程中细节或是局部的成功或者失败往往并不关心，当然也就缺乏整体的思考和总结。项目相关的信息和资料的也无法有效传达，导致往往一个小小问题也会重复发生。</p>
+<h3 id="1-3-跨部门团队的设想"><a href="#1-3-跨部门团队的设想" class="headerlink" title="1.3 跨部门团队的设想"></a>1.3 跨部门团队的设想</h3><p>跨部门团队是指在公司中隶属于不同的职能部门，职能不尽相同的管理者与员工组建的临时性业务团队。由于团队成员的背景不同，具备独特的知识和技能，所以团队成员间能够起到知识互补的作用，使得整个临时性团队具备了执行公司战略的最小单位的条件，能够在业务层面快速反应，达到最高效能。团队的目标是完成设定的目标或是完成时效性比较强的攻坚性任务。</p>
+<p>团队的负责人就是人项目经理，项目经理必须得到公司的正式任命与授权。具体工作是将具体的工作委派给参与项目的各职能部门的专业人员，通过这些专业人员之间的分工与合作以及项目经理的领导、协调、监督与检查。对于更加复杂的任务，各专业人员会将项目的详细进展以及所需资源反馈给所属部门的领导，由所在部门的领导再次调用和分配资源，避免了不同部门之间的沟通障碍、语言障碍。这种各部人员参与、项目透明化的管理方法，能更有效地将项目推进下去 。</p>
+<h2 id="二-知识型员工的特点与管理方式"><a href="#二-知识型员工的特点与管理方式" class="headerlink" title="二 知识型员工的特点与管理方式"></a>二 知识型员工的特点与管理方式</h2><p>知识是通过经验、观察和推论得到的，是一种无形的资源，无形资源的价值在如今的企业竞争格局中正成长为股东价值的一部分和企业竞争力的一部分。资源基础模型认为，任何一个组织都是独特的资源和能力的组合，这些资源和能力的独特性是企业战略和超额利润的基础。对于公司而言，知识型员工的知识体系、知识深度、知识范围，成为了现代公司的竞争优势之一。</p>
+<p>由于国家教育制度的普遍完善，社会中知识型员工逐渐增多。知识型员工一般指从事生产管理、研发、营销、战略规划等运用知识给企业创造价值的人员，其所依赖的是自身所有的知识和运用能力，与以往普通员工的主要区别在于依赖知识型生产资料，因此企业在管理和激励知识型员工时往往采取更为新颖，更为有效的方式，以保证知识型员工发挥其知识价值和创新价值。</p>
+<p><strong>知识型员工的主要特点</strong></p>
+<p>1 追求创新，喜欢有挑战性的工作</p>
+<p>2 强调实现自我价值，期望得到来自公司和社会的认可</p>
+<p>3 出于高度的自信和自我实现需要，通常具有挑战自我，挑战环境的强烈欲望</p>
+<p>对于不同规模、面向不同市场的企业，对知识型员工的配置和要求是存在差异的，企业的管理方式上也有所侧重，但对知识型员工的管理的核心，更多的应放在对精神层面的激励上。企业应该把更多的机会给予知识型员工，进行适度的激励以激发员工的创造性和创新性，来满足知识型员工的的自我实现需要。</p>
+<p>基于经济学家之父的亚当斯密提出的经济人假设理论，每个人的行为都是为了在最大程度上满足自己的利益或是目标。然而单纯的物质性报酬对知识型员工能起到的作用较低，知识型员工并不愿意被物质激励作为项目中的工具人或是机器人来使用，用经济报酬来刺激员工，使他们服从组织命令并做出绩效，以权力和法规加强对员工的控制，这种方式可能会造成知识型员工的消极怠工。</p>
+<p>因此，知识型员工的管理方式应该更倾向于马斯洛提出的需求层次理论，也就是说大多数的知识型员工都有相当高的解决组织问题的能力，是因为其他的多方面原因使得知识型员工在工作中难以正常发挥，按照不同员工当下所处的需求层次，加以相应的激励，满足知识型员工的当下需求，能够更有效地激发知识型员工的潜力。</p>
+<h2 id="三-跨部门团队的构建"><a href="#三-跨部门团队的构建" class="headerlink" title="三 跨部门团队的构建"></a>三 跨部门团队的构建</h2><h3 id="3-1-企业项目化管理制度"><a href="#3-1-企业项目化管理制度" class="headerlink" title="3.1 企业项目化管理制度"></a>3.1 企业项目化管理制度</h3><p>美国项目管理学会对项目的定义是：项目是为创造独特的产品、服务或成果而进行的临时性工作。本杰明格雷厄姆认为，项目是一种资源组合，是为了达到特定目标而调集到一起的，它与常规任务之间的关键区别在于，项目通常只做一次；项目是一项独特的工作类型，应当在限定的时间、成本费用、人力资源及资产等项目参数内完成。</p>
+<p>企业的研发部门并没有对项目做明确的定义，研发工程师会对项目中的挑战性工作更感兴趣，而对于项目本身亦或是项目的周期并没有较高的关注度，以结束时间来强调反而会引起项目质量上的缺陷。研发性质的工作并没有明确度的项目界限，通用组件的研发成本可以均摊到不同项目上，因此技术部门在任务资源调配中容易陷入泥潭，导致出现界限不清的工作以及与企业战略设定相冲突的产出，加之技术研发部门涉及到整个产品初期的绝大多数时间和工作量，技术主管对于许多一次性、临时性的单独工作或是事件通常是从其他项目中临时调用，想必交付的结果也会差强人意，在工作任务以及工作关系中难以两全其美。</p>
+<p>项目化能明确每一个团队的具体目标的交付结果，是一种以项目为中心，涉及到多个专业领域和部门，多任务的活动，强调组织协调来完成工作任务。</p>
+<h3 id="3-2-跨部门团队的优劣势分析"><a href="#3-2-跨部门团队的优劣势分析" class="headerlink" title="3.2 跨部门团队的优劣势分析"></a>3.2 跨部门团队的优劣势分析</h3><p><strong>优点</strong></p>
+<p>1 组织结构机动、灵活，可随项目的开发与结束进行组织或解散。</p>
+<p>2 任务清楚，目的明确，各方面有专长的人都是有备而来。 </p>
+<p>3 人员之间能够做到有效沟通，被授权的人员拥有高度责任感，富有工作热情。</p>
+<p>4 加强了不同部门之间的配合和信息交流，克服了直线职能结构中各部门互相脱节的现象。</p>
+<p>5 能够做到合理调配资源。</p>
+<p>6 能够避免出现项目中员工只顾自身利益的行为。</p>
+<p>7 能够提高员工的成本意识与经营头脑。</p>
+<p><strong>缺点</strong><br>1 团队成员来自不同业务部，隶属关系比较复杂，易出现多领导的可能。不同部门的绩效考核规范不同，导致项目经理无法建立有效的激励和惩罚措施，难以建立项目上的考核标准。</p>
+<p>2 由于团队成员来自不同业务部门，当项目任务完成以后，仍要回到原来岗位，导致容易产生临时性工作想法，对工作积极性会有一定的影响。</p>
+<p>3 对于所属职能部门的工作安排与项目中的工作安排，员工容易以个人利益为导向，无法有效平衡部门工作与项目工作。</p>
+<h3 id="3-3-跨部门模式与阿米巴模式的异同"><a href="#3-3-跨部门模式与阿米巴模式的异同" class="headerlink" title="3.3 跨部门模式与阿米巴模式的异同"></a>3.3 跨部门模式与阿米巴模式的异同</h3><p>阿米巴模式是有日本京瓷创始人稻盛和夫创立的管理方式，阿米巴模式是把整个公司划分成多个独立核算的小型团队，每个小型组织被称为阿米巴单元，是由产出的利润中心，通过充分授权及高度信任，培养阿米巴领导经营者意识，通过全体员工共同参与经营实现经营目标。</p>
+<p>跨部门模式在设计之初参考了许多阿米巴模式的精髓，但由于阿米巴模式是与京瓷公司有一体性，具有先天性的企业基因的特点，难以在已经成规模的企业中快速应用。跨部门模式提供了一种相对于轻便的管理模式，能够在不触及企业已有结构的前提下，将各个项目团队从企业资源中抽象出来，运用项目团队资源上的完整性，发挥不同项目团队的特点，成为企业特有的一种组织能力，充分运用企业能力，快速建立企业的竞争优势。</p>
+<p>跨部门团队并非阿米巴模式那种固定流水线上的特定资源组合，由于公司业务的灵活性，跨部门团队是为了更高效地解决问题而存在，通过团队迅速的反应，与效果反馈机制，能够快速迭代和实验产品的效果。</p>
+<h3 id="3-4-跨部门团队知识库的重要性"><a href="#3-4-跨部门团队知识库的重要性" class="headerlink" title="3.4 跨部门团队知识库的重要性"></a>3.4 跨部门团队知识库的重要性</h3><p>上文所讲到，知识作为企业越来越重要的无形资源和竞争力，但由于各部门之间的知识差异较大，很难将知识融合在一起，形成完整的项目知识库。</p>
+<p>因此，跨部门团队能在高效沟通的基础上，围绕整个项目的生命周期以及所遇到的问题，建立起相对完善的项目知识库。知识库可作为企业资源，随时提供给所需的员工或是团队，避免出现相同问题重复出现的情况。</p>
+<p>最后，由于本人个人能力原因，暂无法对文中存在的其他相关性问题详细剖析论证，但这些问题依然是十分值得研究的。</p>
+<p>1 跨部门团队的组建方式</p>
+<p>2 跨部门团队的管理方式</p>
+<p>3 跨部门团队的绩效评估</p>
+<p>4 所属职能部门与所属项目工作的平衡</p>
+<p>5 跨部门团队的风险与控制手段</p>
+<p>6 面向传统企业组织的结构创新</p>
+<p>本文较浅地讲述了职能型团队在产品研发中不可避免的问题，并结合阿米巴管理模式，引入了跨部门团队的概念，在已有组织结构之上将项目作为一个维度再次抽象，把各职能部门结合到一起形成利益共同体。其目的在于解决职能型团队的问题，提高组织运作效率，发挥研发人员优势和特长，最终实现产品研发流程的优化，达到员工、职能部门和企业的共赢。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84/"># 组织结构</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/an-idea-of-creatures/">生物为何而存在</a>
+            
+            
+            <a class="next" rel="next" href="/abuse-in-humanlike-writing/">被滥用的拟人</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

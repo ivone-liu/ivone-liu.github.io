@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>35进不了高层，就要被淘汰吗？ | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">35进不了高层，就要被淘汰吗？</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-07-29&nbsp;&nbsp;21:45</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>看到网上圈子里在谈35岁员工被裁员，35岁大龄码农跟刚毕业小年轻一起写代码还被吐槽等等，网络上上已经把35岁这个年龄给污名化了，就好像35岁是梦想的终点，到了35岁就一定要怎样怎样，要是没有达成世俗眼中的成就，就是失败的人生，成了隔壁家小孩的反面教材。</p>
+<p>提到35岁我想到的第一个人，是野原广志，虽然没有实际存在，但是35岁差不多都是这个样子吧：家中有妻小，有汽车房屋贷款，有日常生活开销，还要跟同事领导一起喝酒，天天天刚亮出门，深夜回家，因为工作周末也难得休息 … 是不是也戳中了现在上班族的痛点，广志在公司里面是一位小股长，没什么实权，还要天天赶项目见客户，头发稀疏了很多，与家人一起的时间也被挤压，能让我一边看小新一边有一种成年人的辛酸。</p>
+<h3 id="但，我需要考虑35岁危机吗？"><a href="#但，我需要考虑35岁危机吗？" class="headerlink" title="但，我需要考虑35岁危机吗？"></a>但，我需要考虑35岁危机吗？</h3><p>危机一词用在这里是比较恰当的，比如经济危机就是经济体制出了问题，在一个岌岌可危的边缘，必须有人能往狂澜于既倒，才能让经济体制正常恢复。</p>
+<p>对于个人来说，只要不是富二代，生活中就会有在钱上的考虑，钱少选择就少，开销就少，想要追寻梦想，奈何荷包不同意，因此35岁危机一方面是钱的危机。</p>
+<p>另外，是我们从哪里赚钱，很显然是工作赚钱，没有了工作第一要务是没了经济收入，其次才是失去了社会地位，这也就有了公司压榨员工的一个合理因素。</p>
+<p>综合钱跟工作两个要素，我可以得出结论，我需要正面思考35岁危机。</p>
+<h3 id="谈谈职业规划"><a href="#谈谈职业规划" class="headerlink" title="谈谈职业规划"></a>谈谈职业规划</h3><p>在入职一家新公司的时候，人力资源会按照每个人的工作性质和工作情况，拟定这个人的公司职业方向，以便于培养人才，为公司做贡献。</p>
+<p>然而，在入职时每人的期待又有所不同，很难说每人都考虑了自己的未来发展。我半年后在这家公司里要有什么发展，三年后要做到什么职位，不能单纯的因为世俗对于成功的定义过于偏狭，自己的视野就变的偏狭，虽然说公司赋予了我一定的地位和尊严，不过也要考虑到事情的两面性：在我获得公司很高权力时，必然也是我与公司命运绑定的时刻。</p>
+<p>我觉得，做好了职业规划，做一线员工并没有什么不好，也不会因为自己是大龄码农就会被人嘲笑。有些人向来就喜欢做自己的事情，对于别人强加的工作十分厌恶，对于自己专业领域之外的事情也不感兴趣，一直在不停地钻研和深入，这也是一种倔强的人生不是吗？</p>
+<p>我想起了《美丽心灵》中获得诺贝尔奖的约翰纳什先生，一生都在为博弈论作出贡献，哪怕跟刚进大学的小孩子坐在一间图书馆，他也能平心静气地面对，并没有因为自己没有做到学校的高层而自卑。</p>
+<h3 id="何为三十而立"><a href="#何为三十而立" class="headerlink" title="何为三十而立"></a>何为三十而立</h3><p>现代人就是喜欢断章取义，不喜欢把事情联系起来，每件事情单独处理，就好比孔子说的三十而立，人们就单独拎了出来，天天挂在嘴边。</p>
+<p>查理芒格在一次演讲中提到：他大学的老师给他们说“如果你们能把案件中的每一件事情都独立开来看待和处理，那么你就是一名伟大的律师了”。当然这是句反话，任何事情都是关联的，没有无缘无故会突然冒出的事情，对事情去追根溯源，才是要做的事情。</p>
+<p>话说回来，我也读过论语，孔子当然说了很多耐人深思的话，而他所谓的三十而立，则是在他的儒学体系中，能够成为一个君子的条件，而不是现在成功学所讲到的要成为领导，要成为富翁，曲解也要有个限度。</p>
+<hr>
+<p>我也跟朋友聊过，为什么不去做一些能让自己不会遗憾的事情，朋友给我的回答，往往都是就着现实的一剂浓缩鸡汤，虽然有点儿价值，但是逻辑上很难走通。工作、家庭占据了将近80%的时间，自己能掌控的最多也就20%，很多人都在用20%的时间为80%的工作而消遣。回过头来，我们发现很多能自以为傲的成就反而都是20%的时间所做的事情，有的人工作之余考了研，有的人晚上回家自学了CPA。（这段太过鸡汤，自己都要看不下去了）</p>
+<p>我觉得所谓的35岁被淘汰，是那些在公司里倚老卖老，打着学不动的幌子天天混日子的人，与其想着被裁掉还不如去多碰碰机会。那我还需要考虑35岁危机吗？答案还是需要，这个需要不是那种为了一种不存在的压力天天烦恼，也不是网络的喧嚣给我带来的压力，更不是没进入高管行列被他人看不起，认清现实，捋清事情，前进吧少年。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/abuse-in-humanlike-writing/">被滥用的拟人</a>
+            
+            
+            <a class="next" rel="next" href="/focus-in-life-and-distributed-in-learning/">聚焦式生活与分布式技能</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

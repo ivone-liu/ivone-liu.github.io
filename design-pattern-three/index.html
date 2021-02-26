@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>设计模式之PHP实现（三） | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">设计模式之PHP实现（三）</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2018-10-22&nbsp;&nbsp;22:18</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p><a href="">设计模式之PHP实现（一）</a></p>
+<p><a href="">设计模式之PHP实现（二）</a></p>
+<h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3><p>与工厂模式一样，都是用来创建对象的。</p>
+<p>而原型模式是先创建好一个原型对象，然后通过clone原型对象来创建新的对象，这就免除了创建类时的重复操作。</p>
+<p>原型模式适用于大对象的创建，创建一个大对象需要很大的开销，如果每次new就会占用很多资源，原型模式只是在内存中的拷贝。</p>
+<p><strong>基本类</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">require_once</span> <span class="string">'Loader.php'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Canvas</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> $data;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">init</span><span class="params">($width = <span class="number">20</span>, $height = <span class="number">10</span>)</span> </span>&#123;</span><br><span class="line">        $data = <span class="keyword">array</span>();</span><br><span class="line">        <span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $height; $i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> ($j = <span class="number">0</span>; $j &lt; $width; $j++) &#123;</span><br><span class="line">                $data[$i][$j] = <span class="string">'*'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;data = $data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * $x1 head第 x 行</span></span><br><span class="line"><span class="comment">    * $x2 到第 x 行</span></span><br><span class="line"><span class="comment">    * $y1 margin left 第几个</span></span><br><span class="line"><span class="comment">    * $y2 到第几个</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">rect</span><span class="params">($x1, $x2, $y1, $y2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">$this</span>-&gt;data <span class="keyword">as</span> $k1=&gt;$line) &#123; <span class="comment">// $k1 是创建数组时的 $height 的值</span></span><br><span class="line">            <span class="keyword">if</span> ($x1 &gt; $k1 <span class="keyword">or</span> $x2 &lt; $k1) &#123; <span class="comment">// 当第1个参数大于$k1时，或者第2个参数小于$k1时.只会在指定的高度区间操作.</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">foreach</span> ($line <span class="keyword">as</span> $k2=&gt;$char) &#123; <span class="comment">// $k2 是创建数组时 $width 的值</span></span><br><span class="line">                <span class="keyword">if</span> ($y1 &gt; $k2 <span class="keyword">or</span> $y2 &lt; $k2) &#123; <span class="comment">// 当第3个参数大于$k1时，或者第4个参数小于$k1时.</span></span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">$this</span>-&gt;data[$k1][$k2] = <span class="string">'#'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">$this</span>-&gt;data <span class="keyword">as</span> $line) &#123;</span><br><span class="line">            <span class="keyword">foreach</span> ($line <span class="keyword">as</span> $char) &#123;</span><br><span class="line">                <span class="keyword">echo</span> $char;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>实例化执行</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">require_once</span> <span class="string">'Loader.php'</span>;</span><br><span class="line"></span><br><span class="line">$c = <span class="keyword">new</span> Canvas;</span><br><span class="line">$c-&gt;init();</span><br><span class="line"></span><br><span class="line"><span class="comment">// $c2 = new Canvas;  // 传统开发模式，会直接实例化</span></span><br><span class="line"><span class="comment">// $c2-&gt;init();</span></span><br><span class="line"></span><br><span class="line">$c2 = <span class="keyword">clone</span> $c;  <span class="comment">// clone 会更加节省内容和资源消耗</span></span><br><span class="line">$c2-&gt;rect(<span class="number">2</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">8</span>);</span><br><span class="line">$c2-&gt;draw();</span><br><span class="line"></span><br><span class="line">$c3 = <span class="keyword">clone</span> $c;</span><br><span class="line">$c3-&gt;rect(<span class="number">1</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">8</span>);</span><br><span class="line">$c3-&gt;draw();</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="注册模式"><a href="#注册模式" class="headerlink" title="注册模式"></a>注册模式</h3><p>注册模式目的是为了全局对象的共享和交换，即将创建好的对象挂在一个全局数组中，在需要的时候从该数组获得即可。</p>
+<p>就要求在系统初始化时，一起初始化这个数组，并且保持数据不会被清理掉。</p>
+<p><strong>代码实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Register</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">static</span> $objects;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">set</span><span class="params">($alias, $object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">self</span>::$objects[$alias] = $object;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span><span class="params">($alias)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::$objects[$alias];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">_unset</span><span class="params">($alias)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">unset</span>(<span class="keyword">self</span>::$objects[$alias]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><ul>
+<li>$instance 必须声明为静态的私有变量。</li>
+<li>构造函数和析构函数必须声明为私有，防止外部程序new类而失去单例模式的意义</li>
+<li>getInstance()方法必须设置为共有的，必须调用此方法以返回实例的一个引用</li>
+<li>:: 操作符只能访问静态变量和静态函数</li>
+<li>new对象都存在内存消耗（因为static方法，默认会占用部分内存）</li>
+<li>使用场景：最常用的地方是数据库连接 （仅存在一个实例，且不会创建其他实例）</li>
+<li>使用单例模式生成一个对象后，该对象可以被其他众多对象所使用</li>
+<li>私有的<strong>clone()方法防止克隆对象 （指的是魔术方法</strong>clone()）</li>
+</ul>
+<p>单例模式，使用某个类的对象在内存中仅允许存在一个。</p>
+<p>构造函数private修饰，申明一个static getInstance方法，在该方法里创建该对象的实例，如果实例已存在，则不创建。</p>
+<p><strong>代码实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleTest</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">private</span> $instance;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">private</span> $config;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($config)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;config = $config;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"实例化成功"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">__clone</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getInstance</span><span class="params">($config)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">self</span>::$instance <span class="keyword">instanceof</span> <span class="keyword">self</span>) &#123;</span><br><span class="line">            <span class="keyword">self</span>::$instance = <span class="keyword">new</span> <span class="keyword">self</span>($config);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>::$instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;config;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$single1 = SingleTest::getInstance(<span class="string">'Hello World'</span>);</span><br><span class="line">$single1-&gt;getName();</span><br><span class="line"></span><br><span class="line">$single2 = SingleTest::getInstance(<span class="string">'aaa'</span>);</span><br><span class="line">$single2-&gt;getName();</span><br></pre></td></tr></table></figure>
+
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>设计模式其实是对整个项目的把控，从基本功能的抽象开始，到一层层地封装，最后实现的是一套灵活性大可拓展性高的系统，不必因为小的改动而牵一发动全身。</p>
+<p>但总结起来还是前文提到的，是为了学习编程，而非编程语言。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/one-dream/">惊悚小故事：顺风车</a>
+            
+            
+            <a class="next" rel="next" href="/japan-travel/">平成末年关西游记</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

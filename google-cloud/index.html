@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>申请免费Google云搭建SS | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">申请免费Google云搭建SS</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2018-11-20&nbsp;&nbsp;09:34</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%BE%8A%E6%AF%9B/">羊毛</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>很早就听说Google和Amazon给新用户提供1年期的免费服务器使用权，当初是先薅了Amazon家的羊毛，后来给忘记了，自动从信用卡中给我扣掉了两个月的费用，后来就被这种大公司的免费云失去了兴致。</p>
+<p>最近发现Google比较良心，在未确认升级账户和支付情况下不会自动扣款，于是就来薅一下Google家的羊毛。</p>
+<p><strong>必要信息：</strong></p>
+<ul>
+<li>双币/外币卡</li>
+<li>Google 账户</li>
+<li>VPN</li>
+</ul>
+<p>如需VPN，可以<a href="mailto:moutain1@126.com">联系我</a>索要VPN账户。最近发现一个<a href="http://www.ssru.ml/register/41680/EVTHJYWC" target="_blank" rel="noopener">免费提供SSR的网站</a>，可注册领取。</p>
+<h3 id="申请免费一年期云服务器"><a href="#申请免费一年期云服务器" class="headerlink" title="申请免费一年期云服务器"></a>申请免费一年期云服务器</h3><p>打开 <a href="https://cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a> 官网，使用已有的Google账户登入。</p>
+<p><img src="/assets/images/google-cloud/step-1.png" alt="申请第一步"></p>
+<p>尽量选择使用个人类型去创建，公司类型会比较麻烦。</p>
+<p><img src="/assets/images/google-cloud/step-2-1.png" alt="申请第二步-类型"></p>
+<p>然后是外币卡信息</p>
+<p><img src="/assets/images/google-cloud/step-2-2.png" alt="申请第二步-银行"></p>
+<p>信息注册好之后，进入cloud控制台，点击结算，即可看到Google送的300美刀优惠额度。</p>
+<p><img src="/assets/images/google-cloud/calculate.png" alt="优惠额度"></p>
+<p>Google为了验证你的信用卡，会先扣除1美刀，不用担心，5分钟左右就能收到退款。</p>
+<h3 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h3><p>选择菜单中的<code>Camputer Engine</code>-&gt;<code>VM实例</code>进入，初次申请系统会给你初始化。</p>
+<p><img src="/assets/images/google-cloud/before-create-vm.png" alt="初始化"></p>
+<p>然后，可以创建一个VM实例。</p>
+<p><img src="/assets/images/google-cloud/create-1.png" alt="初始化"></p>
+<p>这台机器用来搭建SS，所以用一个低配机器足够。HTTP、HTTPS按需开启，其他的选项可以忽略。</p>
+<p><img src="/assets/images/google-cloud/create-2.jpg" alt="初始化"></p>
+<p>创建好之后，对IP速度进行测试，一般来说ping值在100以下，速度就是非常快的了。 前面选一个离你比较近的地方，后面输入你VM实例的IP地址。</p>
+<p><a href="https://tools.ipip.net/traceroute.php" target="_blank" rel="noopener">IP测试工具</a></p>
+<p><img src="/assets/images/google-cloud/ip-tract.png" alt="IP ping"></p>
+<p>Google提供了网页版SSH工具，可以使用浏览器ssh到服务器。</p>
+<p><img src="/assets/images/google-cloud/vm-ssh.png" alt="open ssh"></p>
+<p><img src="/assets/images/google-cloud/ssh.png" alt="ssh shell"></p>
+<p>初始化的是精简版的CentOS系统，可能连<code>wget</code>都需要安装。</p>
+<p>先切换至<code>root</code>账户。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+
+<p>使用yum来安装<code>wget</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install wget -y</span><br></pre></td></tr></table></figure>
+
+<p>关闭<code>SELINUX</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+<p>也有人说是<code>/etc/sysconfig/selinux</code>文件，其实两个之间是链接关系，随便改其中一个，另一个也改了，修改后重启机器即可。可以通过<code>/usr/sbin/sestatus -v</code>命令来查看SELINUX状态。</p>
+<p>设置VNC，将临时IP修改为静态IP地址</p>
+<p><img src="/assets/images/google-cloud/static-ip.jpg" alt="ip-static"></p>
+<p>配置出入网规则</p>
+<p><img src="/assets/images/google-cloud/add-port.jpg" alt="ip-schedule"></p>
+<h3 id="安装BBR"><a href="#安装BBR" class="headerlink" title="安装BBR"></a>安装BBR</h3><p>作用就不多说了，自行百度。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget</span><br><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh</span><br><span class="line">chmod +x bbr.sh</span><br><span class="line">./bbr.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装SS"><a href="#安装SS" class="headerlink" title="安装SS"></a>安装SS</h3><p>推荐一个<code>秋水逸冰</code>开发的原版SS一键安装脚本。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh &amp;&amp; chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure>
+
+<p>然后根据脚本提示选择酸酸配置</p>
+<p>个人（强烈）建议：</p>
+<p>加密：<code>aes-256-gcm</code>或者<code>chacha20-ietf-poly1305</code>，总之使用 AEAD 加密</p>
+<p>默认配置文件为<code>/etc/shadowsocks.json</code>，如有多端口多用户设置，可以修改为一下格式 （备注信息需要删除掉）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">	<span class="string">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">	<span class="string">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">	<span class="string">"password"</span>:<span class="string">""</span>,</span><br><span class="line">	<span class="string">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">	<span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>, <span class="comment"># 加密方式</span></span><br><span class="line">	<span class="string">"fast_open"</span>: false,</span><br><span class="line">	<span class="string">"workers"</span>: <span class="number">6</span>,</span><br><span class="line">	<span class="string">"log-file"</span>: <span class="string">"/var/log/shadowsocks.log"</span>, <span class="comment"># 日志文件存放位置</span></span><br><span class="line">	<span class="string">"port_password"</span>:</span><br><span class="line">	&#123; </span><br><span class="line">		<span class="string">"PORT-1"</span>:<span class="string">"PASSWORD-1"</span>,</span><br><span class="line">		<span class="string">"PORT-2"</span>:<span class="string">"PASSWORD-2"</span>,</span><br><span class="line">		<span class="string">"PORT-3"</span>:<span class="string">"PASSWORD-3"</span>,</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后重启shadowsocks就可生效</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装SSR"><a href="#安装SSR" class="headerlink" title="安装SSR"></a>安装SSR</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh &amp;&amp; chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure>
+
+<p>然后根据脚本提示选择酸酸配置</p>
+<p>个人（强烈）建议：</p>
+<p>加密：none</p>
+<p>协议：auth_chain_a</p>
+<p>混淆：根据你自己的需求，选择<code>plain</code>或者<code>http_simple</code></p>
+<p>个人极其不建议使用<code>tls1.2_ticket_auth</code>系列混淆</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E5%88%86%E4%BA%AB/"># 分享</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/think-of-programmer/">对于个人行业未来的思考</a>
+            
+            
+            <a class="next" rel="next" href="/story-of-door/">邪邪的梦：门后的世界</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

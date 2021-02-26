@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>不说硬话，不做软事 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">不说硬话，不做软事</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2019-05-22&nbsp;&nbsp;16:21</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>最近华为的两件事情在国内闹得沸沸扬扬，第一是美国给华为的手机产业断了供应链，第二是华为面对危机的姿态，引发了国内网友和媒体的热议，甚至关联到了爱国层面。就这两件事，我觉得不应被各种舆论牵制，我简述一下自己的看法。</p>
+<h3 id="对于美国断供的看法"><a href="#对于美国断供的看法" class="headerlink" title="对于美国断供的看法"></a>对于美国断供的看法</h3><p>美国从芯片上和操作系统上对华为断货，以为是掐住了华为研发的命脉。从海外市场角度上来说是十分正确的，Google停止了所有的服务，在欧美地区确实是正中命门，但这种被动局面只是暂时的，因为华为有自产的操作系统的芯片，虽然不成熟但是也能保证在关键时候派上用场。</p>
+<p>但是我想说的，并不是于此。从长远来看，芯片的战争开始于上世纪七十年代，国内还在饥荒的时候，美国、日本已经在芯片领域争夺王座，我们落下的几十年，别人在已有的技术层面上继续发展，而我们却要拓荒研发，这些并不是短短几十年能追上的，即便是追上了说不定芯片时代已经成为了历史。我们所要做的，是在芯片和操作系统的更高维度上的发展，在美国给我们低维度上断供补给，我们能在更高的维度实施致命打压，所谓的超级大国和核心科技，都是以某些尖端技术领域超越所有的国家，能以降维打击方式来给全世界造成危机。师夷之长技以制夷，并不适用于当前的情况，新时代固然是要以新视角来看待，所谓的中国威胁论现在还不足以成立。</p>
+<p>所谓的华为自主研制的操作系统，仍然面临诸多的问题。我们回顾一下已经阵亡的手机操作系统：Microsoft与Nokia合作的WP系统，BlackBerry的BlackBerry OS，Nokia的MeeGo，HP的WebOS，Samsung的bada，阿里的AliOS 等等，前车之鉴，尸骨未寒，历历在目。</p>
+<h3 id="对于面死而生的思考"><a href="#对于面死而生的思考" class="headerlink" title="对于面死而生的思考"></a>对于面死而生的思考</h3><p>经常能看到网上对华为的一些谈话内部讲座的报道，这些报道有一部分是华为的危机意思，常用很多公司避讳的词语（如：寒冬、死亡等等）来给华为做提醒，面向最坏的情况时，应该如何应对。</p>
+<p>免死而生是一个严肃的话题，所谓死是代表事情以最坏的结果完结，面向最终的最坏的结果，现在应该采取哪些措施，倘若出现了意料中的结果也还有回天之策。</p>
+<p>面死而生是做人和做企业应有的危机意识，就比如我自己，在一次裁员之后乱了手脚，即便是在有长远的规划情况下，也因此不得不先考虑吃饭问题，导致长远的计划瞬间失去了意义。所以我的危机意识也因此出现，不能所有的事都是不停在推到明天，倘若没有了明天，我以我当前的资源怎么去维持。</p>
+<h3 id="不说硬话，不做软事"><a href="#不说硬话，不做软事" class="headerlink" title="不说硬话，不做软事"></a>不说硬话，不做软事</h3><blockquote>
+<p>「美国是法制国家，美国企业不能不遵守法律，实体经济要遵守法律。媒体也不要老骂美国企业，大家多为美国企业说话，要骂就骂美国政客。我觉得有时候不分青红皂白，一竿子打过去打的都是矮的人，其实高的人打不着。媒体应该要理解，美国企业和我们是共命运的，我们都是市场经济的主体。」</p>
+</blockquote>
+<blockquote>
+<p>「一个基础理论形成需要几十年的时间，如果大家都不认真去做理论，都去喊口号，几十年以后我们不会更加强大。所以，我们还是要踏踏实实做学问。」</p>
+</blockquote>
+<p>以上是任正非谈到的话，并没有强硬地要求美国怎么样，要求员工怎么样，但“诺亚实验室”，“华为海思”这些逐渐解开面纱的公司，都是华为的手中的王牌。</p>
+<p>要在他人面前保持谦卑，为他人留有情面时，也是在给自己留后路。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/scrapy-tuition/">Scrapy 简单入门</a>
+            
+            
+            <a class="next" rel="next" href="/thai-trip/">春日暹罗国游记</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

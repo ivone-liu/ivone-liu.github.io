@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>App支配下的贫穷 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">App支配下的贫穷</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-05-11&nbsp;&nbsp;20:38</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>手机中安装的各种App，让人们在无时无刻地都被大量信息包围着，手机成了生活的基础设施之后，信息的获取不再困难，随时随地都能找到各种各样的信息，也就有了无论是在吃饭、睡觉还是通勤，就连工作中也会想法挤出一丁点时间来浏览信息的场景。</p>
+<p>当人们在花费时间阅读信息消遣时，这些信息也在消遣着人。人们基于人性和厂家的营销，被动地变成了习惯，然后每个人的喜好都在慢慢地把各个平台的信息系统喂养得十分庞大，最后你跟别人同时打开App，都会按照不同的喜好出现不同的信息流，让你继续沉浸在你关注的信息中 — — 你浏览的越多，推送越精确；推送越精确，你浏览的越多 … 最后一旦手机没电，失去了信息的围绕，人就会陷入无尽的焦虑之中，你可以回头想一下，你上次在飞机上的时候，是怎么度过的。</p>
+<h3 id="碎片时间的碎片认知"><a href="#碎片时间的碎片认知" class="headerlink" title="碎片时间的碎片认知"></a>碎片时间的碎片认知</h3><p>许多贩卖焦虑的文章都在讲用如何碎片时间培养起一套完整的知识系统，把碎片时间讲的神乎其神，似乎充分利用了碎片时间，就能学到更多知识，培养更高级的认知。这种方式似乎只是卖课的老师来说有用，对于我们普通人来说，用碎片的时间来浏览碎片的知识，最后带来的就是碎片的、狭隘的认知。</p>
+<p>我举个例子，我最近读了一片公众号文章，讲了麦肯锡的MECE法则，读了一半了解了一些皮毛知识，但文章后半段内容如图蜻蜓点水一样，几句讲完，就开始卖课。读完我就有一种如鲠在喉的感觉，一是没有了解透彻，二是不想买课。然后，地铁到站了，下车后，这件事就被抛之脑后。</p>
+<p>碎片时间之所以是碎片时间，就是在你专注时间之外，被多块大规模的专注时间所割裂出来的时间，碎片时间的阅读，在进入到专注的工作后，就难以再度沉浸到对知识的深度理解，即便是记住了也只是皮毛而已。</p>
+<h3 id="浅薄的认知"><a href="#浅薄的认知" class="headerlink" title="浅薄的认知"></a>浅薄的认知</h3><p>或许你会说，碎片时间的知识我会记下来，然后等有时间了深入研究一下。能做到的人已经是凤毛麟角了，但是这种方式能带来的还是认知的浅薄。</p>
+<p>就如同上面我在读麦肯锡MECE法则一样，我似乎有所得，但实际上还是一阵空虚，回过头来看我在地铁上半个多小时的时间，似乎什么都没有做，但还浪费了许多精力。</p>
+<p>再好比说，你今天了解了经济学中的破窗效应，然后记下来下班后回家继续研究，你慢慢了解了经济学的破窗理论，你就应用在你的思维框架中。但是破窗理论是有缺陷的，从逻辑学上讲，并非一定要先破窗才能产生积极的效果，破窗和修窗的资源完全可以用来投入到更合理的事情中去。你把你了解的破窗应用到实际中，就会出现狭隘的认知，也可以说是偏见。</p>
+<p>每个学科都是一个大的信息系统，纷繁复杂，往往是从一根线头开始，抽丝剥茧，花费大量的时间和精力才能了解到学科知识的冰山一角，仅仅是碎片时间得来的碎片知识，在没有强大的思维能力和独立思考力时，就会出现让人在正确的思想下误入歧途。</p>
+<h3 id="被垃圾信息所影响到的意识和判断力"><a href="#被垃圾信息所影响到的意识和判断力" class="headerlink" title="被垃圾信息所影响到的意识和判断力"></a>被垃圾信息所影响到的意识和判断力</h3><p>在上述的信息流中，必然会有很多无用的垃圾信息，通过标题吸引人进来浏览，结果里面内容味同嚼蜡，这倒还好，可还有些内容，完全是在误导，没有任何依据就擅自下定论，不仅仅在制造垃圾，而且还会误导人们的行为和思想。很多无良的媒体，仅仅是为了10w+得指标，写出吸人眼球的标题，对于内容一概不负责任。</p>
+<p>再进一步，当我们的思想被外界的信息所控制，缺少了自己的思考能力，判断力就会出现问题。比如说，在寻找股票的时候，一旦再论坛中看到别人的荐股，心里就会出现“这是别人精挑细选的股票”，“看这个人的历史业绩，这只股应该不会错”… 我们的主观判断了就会被外界带偏，无论是买了之后这支股票赚钱还是赔钱，在一开始的出发点上，个人的判断就出现了问题。如果赚了钱，很多人就会归因于自己擅长找到股市大神，然后继续扔掉判断力，跟着所谓的大神亦步亦趋；如果赔了钱，就会怪罪论坛中的发帖人，丝毫不会考虑到是自己判断力的问题，把这个人拉黑后，下次依然会去论坛里寻找其他人的荐股。</p>
+<h3 id="所谓穷人"><a href="#所谓穷人" class="headerlink" title="所谓穷人"></a>所谓穷人</h3><p>我们所指的穷人，广义上是缺少金钱的人，缺钱就成了穷人，这也没错，是基于物质的稀缺性来做的判断，一件事物越是稀缺，人的注意力就会越在这件事上面集中，上面说的穷人，就是因为金钱的稀缺，过度地将自己的所有资源都投入到赚钱中的人。</p>
+<p>那我换个说法，对于缺少可支配时间的人，时间就是一种极为稀缺的资源，所谓的穷忙活就是天天忙来忙去，很少能有自己能支配的时间，这是否也是一种穷人。一天中专注力只有3个小时的人，专注力在一天的工作分配中就成了稀缺资源，有些需要攻坚的工作却少了专注力最后无法完成，这算不算穷人？ …</p>
+<p>好，到此为止，那些每天被各种信息所围绕，碎片时间都在阅读信息的人，时间上、精力上的资源都在被极大占用，就成了时间和精力的双重穷人。缺少了可用的时间和精力，没有时间去思考，没有精力去学习，一天下来也就是忙忙碌碌，熊瞎子掰玉米一样，今天和昨天一样，昨天和前天一样 … 回顾一年下来，剩下的也只是工作中的工龄增加和更加熟练而已。</p>
+<p>复利，是指起点或许会很低，但每次、每天都会有一些收益，再一次、再一天就会在上一次的基础上叠加收益，我们的持续投入，不用很久，复利的收益就会极为可观。穷人往往是很短视的，上面提到了，由于金钱的稀缺，穷人的所有资源都投入到赚钱中，所有资源都在想办法赚钱，就难以抽出资源来做规划、思考和学习，就会追求短期的金钱收益来让自己的钱包鼓起来，那这套复利的原则在穷人看来或许是非常难以坚持下来的。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/artifical-limb/">义肢</a>
+            
+            
+            <a class="next" rel="next" href="/zoom-in&zoom-out/">zoom in / zoom out</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>Scrapy 简单入门 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Scrapy 简单入门</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2019-05-28&nbsp;&nbsp;15:31</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>使用爬虫有段时间了，最初爬虫是自学的，封装过一个简单得天气APP，在上一家公司时，就常用爬取的数据来支撑公司的一些核心业务，之前更多用的是 <code>urllib</code> + <code>BeautifoulSoup</code> 的方式来抓取和解析数据，但是用久了就觉得自己的技术思维固化，最近研究了一下 Scrapy 的实现。</p>
+<p>Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 可以应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。 【来自Scrapy文档】</p>
+<p>对于写爬虫项目，核心是找到要提取数据的标准格式即文档中提到的结构性数据，从而可以应用一个爬虫可以不限时地爬取想要的所有数据而不需要去更改代码。</p>
+<p><strong><em>里面运用的xpath，可以参考 <a href='http://www.ruanyifeng.com/blog/2009/07/xpath_path_expressions.html' target='_blank'> 阮一峰老师的博客 </a>，深入浅出，很容易学会理解。</em></strong></p>
+<h3 id="爬虫原理"><a href="#爬虫原理" class="headerlink" title="爬虫原理"></a>爬虫原理</h3><p>通过网络请求，读取目标网站的数据，然后根据返回数据的结构来抓到自己所需的数据。</p>
+<blockquote>
+<p>1、发起网络请求</p>
+</blockquote>
+<blockquote>
+<p>2、读取目标网站的回应数据</p>
+</blockquote>
+<blockquote>
+<p>3、从回应数据中，获取到目标信息</p>
+</blockquote>
+<blockquote>
+<p>4、对信息再次处理</p>
+</blockquote>
+<h3 id="安装Scrapy"><a href="#安装Scrapy" class="headerlink" title="安装Scrapy"></a>安装Scrapy</h3><p>可以采用pip方式安装，也可以通过源码安装。使用pip的好处，是在安装插件时，能将依赖一起安装。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建-Scrapy-应用"><a href="#创建-Scrapy-应用" class="headerlink" title="创建 Scrapy 应用"></a>创建 Scrapy 应用</h3><p>通Python第三方框架一样，有一个<code>startproject</code>命令可以用来创建项目。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startprojecty tuition</span><br></pre></td></tr></table></figure>
+
+<p>在scrapy安装正常的情况下，会出现一个tuition目录，即爬虫的项目目录。</p>
+<h3 id="开始编写爬虫"><a href="#开始编写爬虫" class="headerlink" title="开始编写爬虫"></a>开始编写爬虫</h3><p>进入 <code>tuition/tuition/spiders</code> 目录，然后创建一个 <code>tuition_spider.py</code> 文件，注意文件名不要与项目重名，否则会出现一些引入文件的错误。</p>
+<p>先写py文件的头部和引入相关依赖。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment">#encoding=utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scrapy, sys, re</span><br><span class="line"></span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>) <span class="comment"># 一般对于中文的处理，要重新加载默认编码</span></span><br></pre></td></tr></table></figure>
+
+<p>然后开始写核心的爬取方法，以爬取华尔街见闻新闻首页为例。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TuitionSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">"tuition"</span></span><br><span class="line">    allowed_domains = [<span class="string">'wallstreetcn.com'</span>] <span class="comment"># 这里是目标数据的来源网站域名</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.start_urls = [<span class="string">'https://wallstreetcn.com/news/global'</span>] <span class="comment"># 模板数据的来源网址，可填写多个</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span> <span class="comment"># scrapy项目第一次网络请求的默认解析函数</span></span><br><span class="line">        home_page_link = response.xpath(<span class="string">"//div[@class='article-entry list-item']//a[@class='article-link title']//@href"</span>).extract() <span class="comment"># xpath 方式来解析目标数据,读取所有class属性为article-entry list-item的div标签中的href属性值 </span></span><br><span class="line">        <span class="keyword">for</span> news <span class="keyword">in</span> home_page_link: <span class="comment"># 遍历所有的新闻链接,并准备第二次网络请求</span></span><br><span class="line">            <span class="keyword">if</span> re.match(<span class="string">r'^/articles/?\w.+$'</span>, news): <span class="comment"># 过滤URL格式</span></span><br><span class="line">                news_link = <span class="string">'https://wallstreetcn.com%s'</span>%str(news); <span class="comment"># 链接拼接</span></span><br><span class="line">                <span class="keyword">yield</span> scrapy.Request(news_link, callback = self.wallstreet_news) <span class="comment"># 发送第二次网络请求</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wallstreet_news</span><span class="params">(self, response)</span>:</span> <span class="comment"># 第二次网络请求的解析函数</span></span><br><span class="line">        title = response.xpath(<span class="string">"//h1[@class='title']//text()"</span>).extract_first() <span class="comment"># 提取第一条class属性值为title的h1标签值的文字内容</span></span><br><span class="line">        news = response.xpath(<span class="string">"//div[@class='rich-text']"</span>).extract()</span><br><span class="line">        <span class="keyword">print</span> title</span><br><span class="line">        <span class="keyword">print</span> news</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明</strong></p>
+<ul>
+<li>多次网络请求函数 <code>scrapy.Request(url, callback)</code> 提供对解析出的页面内数据再次进行数据爬取。参数：url 为请求地址，callback为请求数据结果的回调函数。</li>
+<li>extract()： xpath解析完之后的提取方法，默认会提取所有匹配的数据。</li>
+<li>extract_first()：xpath解析完之后只提取符合条件的第一条数据。</li>
+</ul>
+<p>最后在项目根目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl tuition</span><br></pre></td></tr></table></figure>
+
+<p>程序会执行并打印出爬虫的各个指标值和提取到的数据。</p>
+<h3 id="高级方法"><a href="#高级方法" class="headerlink" title="高级方法"></a>高级方法</h3><h4 id="User-Agent-设置"><a href="#User-Agent-设置" class="headerlink" title="User-Agent 设置"></a>User-Agent 设置</h4><p>在 <code>settings.py</code> 中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USER_AGENT = <span class="string">'tuition (+http://www.yourdomain.com)'</span></span><br></pre></td></tr></table></figure>
+
+<p>可以设置为任意Agent，可以减少被服务器拒绝的次数，如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USER_AGENT = <span class="string">'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="cookie-以及-header-的设置"><a href="#cookie-以及-header-的设置" class="headerlink" title="cookie 以及 header 的设置"></a>cookie 以及 header 的设置</h4><p>重写 Scrapy 默认的请求函数，在请求中加上 header 和cookie 等所需参数，比如抓取雪球的新闻数据，需要在请求中添加header以及cookie信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">start_requests</span><span class="params">(self)</span>:</span></span><br><span class="line">        headers = &#123;</span><br><span class="line">            <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36'</span>,</span><br><span class="line">            <span class="string">'Accept'</span>:<span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'</span>,</span><br><span class="line">            <span class="string">'Referer'</span>:<span class="string">'https://xueqiu.com'</span>,</span><br><span class="line">            <span class="string">'Host'</span>:<span class="string">'xueqiu.com'</span></span><br><span class="line">        &#125;</span><br><span class="line">        cookie = &#123;</span><br><span class="line">            <span class="string">'device_id'</span>:<span class="string">'6ed816cd2373d60aeaa93a3c79cedb2b'</span>,</span><br><span class="line">            <span class="string">'s'</span>:<span class="string">'f716n5qev9'</span>,</span><br><span class="line">            <span class="string">'bid'</span>:<span class="string">'0aa20bea525418b1b4293f02f9f23c90_jty6nfgl'</span>,</span><br><span class="line">            <span class="string">'xq_a_token'</span>:<span class="string">'e71fc3865ba97b436732bbba8f9e9cbd74501c3b'</span>,</span><br><span class="line">            <span class="string">'xqat'</span>:<span class="string">'e71fc3865ba97b436732bbba8f9e9cbd74501c3b'</span>,</span><br><span class="line">            <span class="string">'xq_r_token'</span>:<span class="string">'5c020cfae733c5ba38e05f73e0dcedf2f2fac088'</span>,</span><br><span class="line">            <span class="string">'xq_token_expire'</span>:<span class="string">'Mon%20Jun%2003%202019%2015%3A07%3A01%20GMT%2B0800%20(CST)'</span>,</span><br><span class="line">            <span class="string">'xq_is_login'</span>:<span class="string">'1'</span>,</span><br><span class="line">            <span class="string">'u'</span>:<span class="string">'2017864747'</span>,</span><br><span class="line">            <span class="string">'aliyungf_tc'</span>:<span class="string">'AQAAAKlkWELEuAAAxIrqe786K+m5asGr'</span>,</span><br><span class="line">            <span class="string">'Hm_lvt_1db88642e346389874251b5a1eded6e3'</span>:<span class="string">'1557998440,1558076670,1558321777,1558492009'</span>,</span><br><span class="line">            <span class="string">'Hm_lpvt_1db88642e346389874251b5a1eded6e3'</span>:<span class="string">'1558517173'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">yield</span> scrapy.FormRequest(self.start_urls, method=<span class="string">'GET'</span>, cookies=cookie, headers=headers, dont_filter=<span class="literal">True</span>, callback=self.parse_json) <span class="comment"># 可自由设置回调函数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="爬取到的数据保存至数据库"><a href="#爬取到的数据保存至数据库" class="headerlink" title="爬取到的数据保存至数据库"></a>爬取到的数据保存至数据库</h4><p><strong>配置Item</strong></p>
+<p>找到项目的<code>items.py</code>文件，添加所要提取的数据字段。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TuitionItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    <span class="comment"># define the fields for your item here like:</span></span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    news = scrapy.Field()</span><br></pre></td></tr></table></figure>
+
+<p>找到<code>pipelines.py</code>文件，配置数据库信息。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入必要的依赖</span></span><br><span class="line"><span class="keyword">from</span> twisted.enterprise <span class="keyword">import</span> adbapi</span><br><span class="line"><span class="keyword">import</span> MySQLdb</span><br><span class="line"><span class="keyword">import</span> MySQLdb.cursors</span><br><span class="line"><span class="keyword">from</span> MySQLdb <span class="keyword">import</span> escape_string</span><br><span class="line"><span class="keyword">from</span> scrapy.crawler <span class="keyword">import</span> Settings <span class="keyword">as</span> settings</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TuitionPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span> <span class="comment"># 数据库配置</span></span><br><span class="line">        dbargs = dict(</span><br><span class="line">            host = <span class="string">'127.0.0.1'</span> ,</span><br><span class="line">            db = <span class="string">'tuition'</span>,</span><br><span class="line">            user = <span class="string">'root'</span>, <span class="comment">#replace with you user name</span></span><br><span class="line">            passwd = <span class="string">'123'</span>, <span class="comment"># replace with you password</span></span><br><span class="line">            charset = <span class="string">'utf8'</span>,</span><br><span class="line">            cursorclass = MySQLdb.cursors.DictCursor,</span><br><span class="line">            use_unicode = <span class="literal">True</span>,</span><br><span class="line">        )    </span><br><span class="line">        self.dbpool = adbapi.ConnectionPool(<span class="string">'MySQLdb'</span>,**dbargs)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span> <span class="comment"># 默认数据处理函数</span></span><br><span class="line">        res = self.dbpool.runInteraction(self.update_firms_data,item)</span><br><span class="line">        <span class="keyword">return</span> item</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update_firms_data</span><span class="params">(self, conn, item)</span>:</span> <span class="comment"># 自定义数据处理</span></span><br><span class="line">        conn.execute(<span class="string">'insert into `news` (`title`, `news`) values (%s, %s)'</span>, (escape_string(item[<span class="string">'title'</span>]), escape_string(item[<span class="string">'news'</span>]))) <span class="comment"># 可直接执行SQL语句</span></span><br></pre></td></tr></table></figure>
+
+<p>修改 <code>settings.py</code>，将下面这一行的注释取消，开启数据管道。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">   <span class="string">'tuition.pipelines.TuitionPipeline'</span>: <span class="number">300</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在主爬虫文件中引入Item。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tuition.items <span class="keyword">import</span> TuitionItem</span><br></pre></td></tr></table></figure>
+
+<p>修改解析函数，将item数据提交到数据处理管道。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wallstreet_news</span><span class="params">(self, response)</span>:</span> </span><br><span class="line">        title = response.xpath(<span class="string">"//h1[@class='title']//text()"</span>).extract_first()</span><br><span class="line">        news = response.xpath(<span class="string">"//div[@class='rich-text']"</span>).extract()</span><br><span class="line">        item = TuitionItem()</span><br><span class="line">        item[<span class="string">'title'</span>] = title</span><br><span class="line">        item[<span class="string">'news'</span>] = news</span><br><span class="line">        <span class="keyword">yield</span> item <span class="comment"># 提交至数据管道处理数据</span></span><br></pre></td></tr></table></figure>
+
+<p>最后执行爬虫命令，数据就会爬取保存到数据库中。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/disability-whom-the-young-are/">当下社会的人类失能</a>
+            
+            
+            <a class="next" rel="next" href="/crisis-of-huawei/">不说硬话，不做软事</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

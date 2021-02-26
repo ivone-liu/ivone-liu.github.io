@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>聚焦式生活与分布式技能 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">聚焦式生活与分布式技能</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-07-22&nbsp;&nbsp;22:28</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>前段时间时间，我陷入了一种高内耗的社会认同效应之中：看到周围的人在学习英语，网上也在鼓吹学习英语的好处，我就顺着软文找到了一个英文口语公众号，买了一套学习课程，打算热血饱满地突破英语口语，然而直到一个月课程结束，坚持上课的次数寥寥可数。</p>
+<p>很显然，我想短时间学习英语的欲望，经过各种营销方式，即便本身并没有多么强烈，也能被唤起，我也逐渐地因为没有学到知识而感到焦虑，然后为这种虚假的努力感所诱惑，被广告牵着鼻子走。这就进入了一个怪圈：一边在加强这种贩卖焦虑的广告的认知，一边追求无效的消耗。那些平时看似有用的停留在微信列表中但又没时间去读的公众号，他们偶尔会抓住社会上的热点，讲一些不着边际的看似有用的话，就是在留住可能的用户。</p>
+<h2 id="聚焦式生活"><a href="#聚焦式生活" class="headerlink" title="聚焦式生活"></a>聚焦式生活</h2><p>有这么一种错觉，似乎是我们关注的越多，我们就能在关注的事情上吸收更多的知识，从而自己就能获得更进一步的发展。就好比，某人虽然天天刷feed流，以为能在其中了解到世界时事，通晓古今历史。我没有权利说某人不对，我也不觉得有什么不对，但是就这种刷手机得到的知识而言，缺乏了必要的深度，就变成了娱乐。就如邓丽君对我而言，只是一个文化符号，我的认知并不能把它拼成一个活生生的人，假若我专门花时间从历史角度、文化角度、心理角度等等，并将视野发散到全世界与之相关联的事情，最终组织出的资料，才能说简单认识了邓丽君。</p>
+<p>我们在很小的时候，都会十分认真地在学习知识，追求真理。我们小时候，虽然物质缺乏，但我们有无限的问题，十万个为什么也满足不了我们，就是在于没有今天这种触手可及的互联网，我们才会去探索问题，去了解事情的所以然，去重塑历史事件中的人物，去思索推论中的漏洞。可为什么我们并没有十分热爱去寻求知识呢？或许是，我们在学习中，标准化的教学让我们感到了疲倦，一遍一遍地重复使我们失去了兴趣，使我们对所谓的标准化的“知识”产生了远离和逃避，我们无法在寻求知识过程中获得凭自己探索得到知识得快乐。</p>
+<p>话说回来，我买的那套英文课，每次没有及时上课我都有一种内疚感，觉得自己的钱白花了，时间也拿来挥霍了，如此就陷入自己给自己预设下的圈套之中，过一会再把当天的上课讲义从网上下载下来，来安慰自己内疚的心理，虽然并不会回头去看。如此一来，我每天就需要拿出一些时间来或者是上课，或者是看讲义，就在我满满的日程表中硬塞了一些额外的工作，让我有种看似很充实同样也有种不堪重负的感觉。碎片化时间的理论，看上去是一种美好的，能提升自己实力的方式，可实际上，对于那些可有可无的知识来说，只是徒劳的浪费精力而已。</p>
+<p>说到碎片化时间，其本身并不是什么故弄玄虚的贩卖焦虑商业武器，但往往我们看到的课程是什么十分钟学会五十音、十天突破雅思等等这种，这些知识无论在设计上还是课程本身上，是十分浅薄的，学习往往也不是一蹴而就的，再说我们所有的是碎片化的时间，而非碎片化的知识，这两者的核心区别在于人能否保持自律，我见到过天天抽空坚持学习，每晚整理学习计划复习学习内容，相比起三天打鱼两天晒网的人来说，能取得更优秀的成绩。</p>
+<p>对时间的消费，就是不同的人的价值观的核心，时间的价值是可衡量的，我用一个小时学习了能提高工作效率的知识，与我用一个小时学习了目前根本用不到的英文口语，这两者花费的时间一样，但所带来的价值完全不同。有人可能会说，英语口语是对未来的投资，并不能说是一无是处。而实际上，只要动动脑子，未来这种梦幻的词汇，难道不是靠当下一点点地积累起来的吗？天天喊着投资未来，却当下都活不下去，哪里会有跟外国人讲英语的未来。</p>
+<h2 id="分布式技能"><a href="#分布式技能" class="headerlink" title="分布式技能"></a>分布式技能</h2><p>现在社会似乎已经完全认同社会分工这种社会工作模式了：每个人在读大学的时候，假期回到家，亲戚朋友问的问题往往是“你在读什么专业？”，很显然，社会也默认专业就是作为成年人糊口生存的基本，继续深入从事的行业，不断地挖掘深造，才是一个人专业的人应该做的。</p>
+<p>可是我觉得，生存能力单一，就会有一种被技能和市场绑架的感觉。过去我们讲到国学大师，会想到什么？儒学、道教、书法、水墨画、文言文、诗词歌赋、算卦占卜、茶道 … 一个人能有这么多能力，可真是了不起。不过，我们进一步来看上面这些所谓的专业能力，四书五经里面讲了儒学、易经、诗歌… 一个读过四书五经的人，就能够出口成章，书法写字并非问题，绘画或许在与朋友饮茶畅谈时就能学习了解，这些能力，都是有一根看不见的线串联了起来，只是后人将它们拆分成了多个所谓的专业。</p>
+<p>在欧洲的文艺复兴时期，当时讲究一个“全人”的概念，至于“全人”是个什么意思，我举一人物个例子：据说达芬奇力大无比，徒手能掰弯拇指粗的铁条，还能画出像是最后的晚餐、维特鲁威人、蒙娜丽莎一类的人类瑰宝，也能做土木工程设计出至今无能出其右的桥梁，还能将自己的手稿笔记加密，在现代人破解之后才发现直升机的原型稿早已在14世纪被设计出来。</p>
+<p>相比上面的国学大师，达芬奇的的技能是一种树状结构，我们学习的所谓的专业知识，在整个知识框架中，是一个节点，与之相串联的其他知识数不胜数，应征了胡适先生那句话：你知道的越多，你不知道的就越多。我们所学习的专业，根本上就是一件获取知识的工具，当我们在学习中，就会发现与其他知识的关联点，这就是在打磨这件工具，就好比在维基百科的一个词条中，会有很多个相关联的词条，探索相关联的知识，才是我们专业学习的意义所在。</p>
+<p>分布式这个词来自于计算机软件中的术语，在一台计算机的计算能力达到上线，无法提供有效的服务时，将一组计算机按照不同的节点放上去，缓冲用户发起的资源请求，起到实时影响的效果。这个概念本身并不是计算机行业的应用场景，而是在设计计算机集群时，参考了其他相关联的词条，并将其应用在计算机领域中，使得计算机能够更高效更优质地完成计算的应做的工作。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/the-crisis-of-ages-35-for-me/">35进不了高层，就要被淘汰吗？</a>
+            
+            
+            <a class="next" rel="next" href="/meaning-of-996/">遍身罗绮者，不是养蚕人</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

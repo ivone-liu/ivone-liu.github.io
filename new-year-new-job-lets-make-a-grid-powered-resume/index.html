@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>新的一年，寻求新的工作？让我们用CSS Grid制作一个漂亮简历！ | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">新的一年，寻求新的工作？让我们用CSS Grid制作一个漂亮简历！</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-02-28&nbsp;&nbsp;11:38</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E8%AF%91%E6%96%87/">译文</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p><a href="https://css-tricks.com/new-year-new-job-lets-make-a-grid-powered-resume/" target="_blank" rel="noopener">原文地址</a></p>
+<p>许多流行的简历设计是将模块布置成网格状态来充分利用网页的空间。我们用CSS Grid来创建一个无论是打印还是在不同尺寸显示器上都看起来很优雅的简历。这样，无论是离线和在线都可以正常使用简历，这种小技巧在新的一年里可能会派上用场。</p>
+<p><img src="https://i.loli.net/2020/02/27/UniNVJKg2urw1tx.png" alt="css-grid-resume.png"></p>
+<p>首先，我们要创建一个存放简历的容器和简历的内容模块。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">class</span>=<span class="string">"resume"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"photo"</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"about"</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"work"</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"education"</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"community"</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"skills"</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>开始使用Grid之前，我们添加 <code>display:gird</code> 来作为布置简历的外部元素。接下来，我会解释其他的组件应该怎样放入页面的布局当中。在这个案例中，我按照两列四行来布局。</p>
+<p>我们使用CSS Grid的<code>fr</code>单位来指分配可用空间。我们给所有的行相等的空间（每行<code>1fr</code>），并且设置第一列的宽度为第二列的两倍（<code>2fr</code>）.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.resume</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">2</span>fr <span class="number">1</span>fr;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/02/27/8Nse9KQAZLPqCI1.jpg" alt="css-grid-tabel.jpg"></p>
+<p>下一步我来说明这些元素在使用 <code>grid-template-area</code> 属性时如何被放入网格中。首先，我们需要使用 <code>grid-area</code> 来命名模块。名字可以随便一些，这里我们将使用与类相同的名称：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.name</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.photo</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: photo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在到了最有趣的部分，这能让整个布局变得轻而易举：将网格放在<code>grid-template-areas</code>属性区域中。比如，我们要想让姓名(<code>name</code>)显示在简历的左上方，就需要将这部分放置在<code>grid-template-area</code>区域的左上方。由于简历的工作(<code>work</code>)介绍信息较多，所以我分成了两个区域来展示。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.resume</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-areas</span>:</span><br><span class="line">    <span class="string">"name photo"</span></span><br><span class="line">    <span class="string">"work about"</span></span><br><span class="line">    <span class="string">"work education"</span></span><br><span class="line">    <span class="string">"community skills"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是到目前我们所能看到的样子 <a href="https://github.com/ivone-liu/resume_tuition/tree/master/template_1" target="_blank" rel="noopener">查看代码</a></p>
+<p><img src="https://i.loli.net/2020/02/27/TsuzdKYLBhi1ClO.png" alt="layout1"></p>
+<p><strong><em>tips: CSS Grid提供了许多十分有用的属性，比如调整大小、页面布局以及许多简略的属性。我们通过展示一个可能的方式来让元素变得简单。去学习一些不错的代码思想来让你的CSS Grid表现得更出色。</em></strong></p>
+<h3 id="调整布局"><a href="#调整布局" class="headerlink" title="调整布局"></a>调整布局</h3><p><code>grid-template-areas</code> 属性让布局变得更简单。比如，如果你认为相比起教育背景来说雇主会对你的技能部分更加关注，你只需要在 <code>grid-template-areas</code> 区域中切换模块名称，无需其他的操作就能实现自动交换布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.resume</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-areas</span>:</span><br><span class="line">    <span class="string">"name photo"</span></span><br><span class="line">    <span class="string">"work about"</span></span><br><span class="line">    <span class="string">"work skills"</span>  <span class="comment">/* skills now moved above education */</span></span><br><span class="line">    <span class="string">"community education"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/02/27/rdIwn6WacXGbV9R.jpg" alt="resume-02.jpg"></p>
+<p><img src="https://i.loli.net/2020/02/27/tr6zaPi9IuBolYO.png" alt="layout2"></p>
+<p><a href="https://github.com/ivone-liu/resume_tuition/tree/master/template_2" target="_blank" rel="noopener">查看代码</a></p>
+<p>我们可以修改很少CSS代码来实现受欢迎的左侧窄列简历设计。这是对于网格来说最合适的应用场景：我们可以重新布局已命名的网格区域，在其他区域变动的时候精确保持原有的位置不变。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.resume</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">  <span class="attribute">grid-template-areas</span>:</span><br><span class="line">    <span class="string">"photo education"</span></span><br><span class="line">    <span class="string">"name work"</span></span><br><span class="line">    <span class="string">"about work"</span></span><br><span class="line">    <span class="string">"skills community"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/02/27/PNr7yzfVsEGHcA1.jpg" alt="resume-03-1.jpg"></p>
+<p><img src="https://i.loli.net/2020/02/27/Y9F2nPZtJc4WKUN.png" alt="layout3"></p>
+<p><a href="https://github.com/ivone-liu/resume_tuition/tree/master/template_3" target="_blank" rel="noopener">查看代码</a></p>
+<h3 id="分隔栏"><a href="#分隔栏" class="headerlink" title="分隔栏"></a>分隔栏</h3><p>如果你想在简历中添加个人资料展示，我们可以在网格模板最下面添加第三列。注意，我们在更新时需要保持列单位的一致，以便于个人资料部分能跨两列保持正常布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.resume</span> &#123;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">  <span class="attribute">grid-template-areas</span>:</span><br><span class="line">    <span class="string">"name name photo"</span></span><br><span class="line">    <span class="string">"work work about"</span></span><br><span class="line">    <span class="string">"work work education"</span></span><br><span class="line">    <span class="string">"community references skills"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/02/27/omqOv3NRdIVznJb.jpg" alt="resume-04-1.jpg"></p>
+<p><img src="https://i.loli.net/2020/02/27/g1YOPMcrGmx7ihq.png" alt="layout4"></p>
+<p><a href="https://github.com/ivone-liu/resume_tuition/tree/master/template_4" target="_blank" rel="noopener">查看代码</a></p>
+<p><strong><em>tips：在两个模块中间的间隔，可以用grid-gap属性来控制</em></strong></p>
+<h3 id="响应式"><a href="#响应式" class="headerlink" title="响应式"></a>响应式</h3><p>对于小尺寸屏幕来说，比如移动设备，我们可以把简历部分放在一个与屏幕等宽的列中。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: 1<span class="selector-tag">fr</span>;</span><br><span class="line"><span class="selector-tag">grid-template-areas</span>:</span><br><span class="line">  "<span class="selector-tag">photo</span>"</span><br><span class="line">  "<span class="selector-tag">name</span>"</span><br><span class="line">  "<span class="selector-tag">about</span>"</span><br><span class="line">  "<span class="selector-tag">work</span>"</span><br><span class="line">  "<span class="selector-tag">education</span>"</span><br><span class="line">  "<span class="selector-tag">skills</span>"</span><br><span class="line">  "<span class="selector-tag">community</span>"</span><br><span class="line">  "<span class="selector-tag">references</span>"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后对于较宽的屏幕我们可以使用media query来调整布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width:</span> <span class="number">1200px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.resume</span> &#123;</span><br><span class="line">    <span class="attribute">grid-template-areas</span>:</span><br><span class="line">      <span class="string">"name photo"</span></span><br><span class="line">      <span class="string">"work about"</span></span><br><span class="line">      <span class="string">"work education"</span></span><br><span class="line">      <span class="string">"community skills"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上两种尺寸中或许还有一种情况，比如，在类似于平板来说的中等尺寸屏幕，我们或许想将所有的内容放在一个独立列中，但是个人和图片并排在顶部展示。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">min-width:</span> <span class="number">900px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.resume</span> &#123;</span><br><span class="line">      <span class="attribute">grid-template-columns</span>: <span class="number">2</span>fr <span class="number">1</span>fr;</span><br><span class="line">      <span class="attribute">grid-template-areas</span>:</span><br><span class="line">        <span class="string">"name photo"</span></span><br><span class="line">        <span class="string">"about about"</span></span><br><span class="line">        <span class="string">"work work"</span></span><br><span class="line">        <span class="string">"education education"</span></span><br><span class="line">        <span class="string">"skills skills"</span></span><br><span class="line">        <span class="string">"community community"</span></span><br><span class="line">        <span class="string">"references references"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://attach-ivone.oss-cn-hongkong.aliyuncs.com/responsive_demo.mov" target="_blank" rel="noopener">点击查看录制的响应式布局视频</a></p>
+<h3 id="为单页打印做好准备"><a href="#为单页打印做好准备" class="headerlink" title="为单页打印做好准备"></a>为单页打印做好准备</h3><p>如果你需要将你的简历完美地打印在一张纸上，有几件事情需要牢记。最艰难的挑战是需要删除一些文字来适应单页面。</p>
+<p>避免展示更多信息而挤压缩小字体，这会让简历阅读起来非常费力。一个很小的技巧是在开发过程中向简历元素添加临时的字体大小约束。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.resume</span> &#123;</span><br><span class="line">  <span class="comment">/* for development only */</span></span><br><span class="line">  <span class="attribute">width </span>: <span class="number">210mm</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">297mm</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过这种A4尺寸的边框设置，能清晰的看到简历能否适应这种尺寸，如果内容会溢出边缘，这就意味着会打印到第二张纸上面。</p>
+<p>你可以向CSS来说明打印时哪些元素会隐藏掉，像是浏览器会自动添加的日期和页码。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> print &#123;</span><br><span class="line">  <span class="comment">/* remove any screen only styles, for example link underline */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@page</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0cm</span>;</span><br><span class="line">  <span class="attribute">size</span>: A4 portrait;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有一件事情需要强调，不同的浏览器对简历渲染出不同的字体，也就会让简历在尺寸上出现些微的不同。如果你想极为精确地打印简历，另一种选择是将简历存储为PDF文件并且在自己网站上提供文件下载。</p>
+<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><p>现代浏览器对CSS网格特性都有着很不错的支持。</p>
+<p>IE浏览器对旧版本的CSS网格的支持需要添加额外的前缀，比如 <code>grid-template-columns</code> 就需要写为 <code>-ms-grid-columns</code>. 在 <a href="https://autoprefixer.github.io/" target="_blank" rel="noopener">Autoprefixer</a> 上运行编写的CSS代码，可以帮助添加这些前缀，但是手动地修改之后是必须要经过彻底地测试，因为在旧的规范中，有些属性的效果并不相同，而有些则不存在。为了让代码更好的运行，我推荐过Daniel Tonon的文章 – <a href="https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/" target="_blank" rel="noopener">如何自动配置前缀</a>。</p>
+<p>我们可以编写一些备用代码作为一种可替代的方案，比如说用浮动布局的方法。浏览器在不能识别CSS网格属性的时候，会自动地按照备用的代码来展示。无论你是否要考虑要支持IE，一个备用方案对于确保浏览器在不支持CSS网格是能正常展示你的简历内容（特别是对于有些潜在的不确定性）有着很合理的保障。</p>
+<hr>
+<p>即便你并不准备在线的简历，用CSS网格来做东西还是很有乐趣，能在写代码的同时探索不同的布局方式，生产一个美观的PDF文件，学习一些CSS令人惊叹的特性。</p>
+<p style="text-align:right">祝找工作顺利！</p>
+
+
+
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
+                    
+                        <a href="/tags/%E7%BF%BB%E8%AF%91/"># 翻译</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/monthly-extract-feb-2020/">2020-02月份网络摘录</a>
+            
+            
+            <a class="next" rel="next" href="/programmers-should-plan-for-lower-pay/">开发者应该对低薪酬做好准备</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
