@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>论知识收获的反馈过程 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">论知识收获的反馈过程</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2021-04-25&nbsp;&nbsp;16:21</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>近些年来社会教育的大面积普及使得个体之间的核心竞争力向知识学习的能力转移，如果还保守之前的那种想着仅靠勤奋就能在社会上出人头地的想法，其可能性只能是越来越渺茫。在知识体量成倍膨胀得到当下，没有哪一种知识会是永远一成不变的，也不存在底层知识的绝对正确性。新知识不断地涌出，旧知识结构在不断地打破和重组，各种知识的相互作用使得一个专业不再具有传统意义上的优势，跨学科学习的能力会是未来知识型从业者的发展方向。</p>
+<p>学习作为社会生存的基本能力，多数人难以有效的从学习过程中获取所需的知识，会花费很多无效的时间和精力，最终的成果却与目标相差甚远。在知识获得的过程中，仔细观察到就会察觉到知识学习的基本反馈过程。之所以说是反馈的过程，是因为知识的收割处于一个在不断地正向迭代，不断循环的过程中，而不是一个纯粹的线性过程。我们的思考方式更多地倾向于将知识的学习作为：学习 - 收获这种线性的过程，其实这种线性过程应用在实际学习中则会产生一种较为虚假的学习体验，感受不到学习结果的监听反馈，以至于无法进行进一步地学习深入。下面是我整理的学习循环的基本过程。</p>
+<p><a href="https://imgtu.com/i/cxb6wn" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/25/cxb6wn.png" alt="cxb6wn.png"></a></p>
+<p>首先是确定所要学习的知识方向与目标，设定一个对当前学习阶段结果的期望值，再投入时间和精力来学习基础理论。然后再将习得的知识进行反复练习，加强与其他知识的融合，巩固阶段性的知识成果，到这里，就会有阶段性的知识收获，继而进一步地将知识内化为阶段性的能力。在与目标期望能力的对比之下，再次将资源和上阶段的成果投入到新的学习过程中，不断地循环，直至达到目标期望的能力。</p>
+<p>作为知识型工作者而言，我们在不断地监听自己学习的每一个循环的环节，并根据反馈做出适当的对策和期望的调整，以便进入下一个监听循环中。</p>
+<p>但上面描述的这种知识学习的基础反馈过程，只存在于理想的情况下：在保证个体能在无外部环境变化和内心变化的条件下，上述循环才能有效。然而实际上，我们在整个知识收获过程中，会存在一些因人而异的变化，因环境而异的变化。我在此简单论证一个较为复杂的知识收获过程。</p>
+<h3 id="基本模式"><a href="#基本模式" class="headerlink" title="基本模式"></a>基本模式</h3><p>从古典经济学角度来说，个体学习知识的动力是来自于知识所能带来的利益，比如说：学习了A知识后，薪资收入能随着水涨船高或者在公司的地位能因此改变。所以说知识的存在都是有目的性的，不会脱离实际的人类需要而存在，也不会脱离人类思考能力、想象能力的边界极限。基于这种前提，我们在设定期望值的时候，都是依据经纪人假设为条件，以最终知识所能带来的利益为期望值，当循环累加达到与期望值相差不大的情况下，循环就会减速或是停滞。</p>
+<p>对此，每一项知识所带来的个体或是组织能力都是社会能力的组成部分。基本的学习循环的过程，将习得的知识应用于具体的应用场景，不同的行业和不同专业背景的个体会对同一知识产生不同角度的认知，这是知识内化最表面的现象，由此就会将能够把具象出来的显性知识转化为了个体自我的隐性知识。隐性知识的提炼、加工和再提炼过程，会将隐性知识逐步转化为潜性知识，潜性知识的显性化就成为个体或是组织竞争力的组成部分。</p>
+<p>我们常听到一句话：经验充足的并不是一件好事。这就是说明了为什么在遇到同一个问题时，不同背景的人的解决方式不同，其产生的结果也不尽相同。经验可以理解为隐形知识的一个组成部分，但太多没有一般化的隐性知识的积累，反而会对个体的认知产生较大的扭曲力量，产生偏离实际的认知。</p>
+<p>在基本模式中，上一次循环中学习所产生的能力将会是下一次循环中知识投入的起点。在当前流程中把知识学习扎实才是最重要的，然而知识在学习到练习中间存在一定时间的延迟，在练习与收获之间也存在延迟，在收获与能力的形成之间同样存在延迟。也就是说，同一循环中每一环节都会在上一环节的不断螺旋式上升过程中，得以将知识量的积累变为质的突破，中间的延迟是必不可少的。于是，延迟的存在会使得一部分个体因为无法得到实时的反馈而放弃学习。</p>
+<p>还有一个存在的问题，是学习极限的天花板。无论在学习什么知识，都会因为自己某项达到了极限而无法继续学习。比如说在学习阶段初期，投入大量的精力和时间，得到了大量的知识和能力，随着知识量的增多，对工作的把控能力也增强，这时就会出现学习的懈怠情绪，觉得已有的知识足够使用，就使得学习无法继续推进。而设法去找到极限，并且设法消除极限的思路是行不通的，因为当前循环中的极限与下一次循环的极限会有所出入，而我们要思考的是如何弱化可能出现的瓶颈，避免出现学习极限的情况，保持知识学习循环的畅通性。</p>
+<p><a href="https://imgtu.com/i/cxbhSU" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/25/cxbhSU.png" alt="cxbhSU.png"></a></p>
+<h3 id="专门化与碎片化"><a href="#专门化与碎片化" class="headerlink" title="专门化与碎片化"></a>专门化与碎片化</h3><p>碎片化知识较于专门化知识而言，优点就是能学以致用，学习时间很短，吸收很快，应用也很迅速；其弊端也是因为过于快速的学习，难以厘清知识点之间相互的关联与作用，加上仅仅是某个理论的片面了解，一旦出现问题，就难以按照理论做出迅速的改变。</p>
+<p>碎片化知识就如同其表面的意思：将一整个专业知识打碎，所学到的只是整个拼图板块的很小一部分，仅用来解决当前遇到的问题，由于缺乏引导和知识体系的构建，从长远来看很难说是一种有效的学习方式。</p>
+<p>专门化知识是成体系的知识，比如学习管理学，就要懂得基础的会计、财务、人力资源、战略、经济学、组织行为学等等，依靠各个学科所建立起来的知识体系和知识网络，来看待当前遇到的问题，不仅仅有丰富的解决方案，而且对中长期的发展也提供了稳固的基础。</p>
+<p>这里只客观地讨论专门化与碎片化，并无某种比较高级而另外一种就比较差。专门化知识的搭建极其耗费时间与精力，没有五年十年的积累，很难产生效用，并且在专门化知识的学习过程中，因为研究方向的单一，在遇到其他问题时，还是需要靠碎片化知识来做当前知识的补充。</p>
+<p>没错，我想说的就是两种知识的学习方式结合使用。每个人肯定都有自己擅长的某个领域的，对于其他的领域偶尔能接触到一些，就比如说我是研究计算机领域和管理领域的，在做晚饭时我不需要深入了结酱油的成分与味道的相互作用，我只需要照着菜谱把菜做出来就行了。</p>
+<p>所以，碎片知识的循环次数相较于专门化知识的循环次数要少得多，其目标期望也更低一些。</p>
+<h3 id="碎片化与问题转移"><a href="#碎片化与问题转移" class="headerlink" title="碎片化与问题转移"></a>碎片化与问题转移</h3><p>不过，碎片化知识带来的浅薄化的问题解决方式的思想，使人容易寻找捷径，不去深究其问题的核心点，更多的愿意追求解决所显露出来的表面的浅显的问题，缺少对问题究根问底的态度，也不愿花大时间大力气去解决问题的根本。</p>
+<p>这种只考虑到问题的表面的解决方式，就如同在就医的时候，医生避重就轻在脚踝扭伤的时候给你开了两片止疼药 – 能说没用吗？不能，因为确实在短时间内减缓了我的疼痛感，但随着时间的推迟，疼痛感会再度袭来，再次袭来的疼痛感会带来更剧烈的疼痛和其他可能带来的问题 – 反而会加重脚踝的伤害。</p>
+<p>知识层面也一样，在学习过程中解决问题过程中，转移核心的知识内容和问题，去做一些表面功夫，不去触及整个所要学习内容的核心，最后对学习目标的要求也仅仅是短时间内表面上看似是内容学习完就结束了。如同学习效果的延迟反馈一样，问题的核心会在短时间的平静中变异，至于会变异成什么样子的怪物，取决于问题所影响的范围。到时候，问题处理起来就不仅仅是原本的问题了，会花上更多的时间和精力，更多的知识积累，才能解决掉这个怪物。</p>
+<p>可为什么会存在问题的转移呢？多数原因是因为知识的积累过程偏向于专业化，每个人对问题的态度是基于自己专业能力的考量，或者是以自己的经验和知识量来考量，当然这也可能是不去触及问题核心的说辞。在工作学习中，随着时间的推移，我们会升到更高的年级，学其他的专业，换一份工作，摆脱掉滚雪球滚成庞然大物的问题，自己只需要把表面的问题处理掉就可以了，其他的问题扔给时间和其他人就好。</p>
+<p>碎片化之所以能对应着问题转移，原因就是碎片化的知识只是“就事论事”，停留在知识的表层，来解决的问题的表层。问题看似用碎片化知识解决了，个体也就没有动力继续深入学习，深层次的问题也因此无法解决，潜藏在深处的问题，随时都会有爆炸的危险。</p>
+<h3 id="知识杠杆"><a href="#知识杠杆" class="headerlink" title="知识杠杆"></a>知识杠杆</h3><p>假设在知识学习的循环中，功利化地跳过了必要延迟的环节，直接将读到的信息理解成可操作可应用的知识，在下一次循环中，上次未内化的知识就会变成知识负债，生搬硬套或许下次循环也能走通。但在循环次数的杠杆上，在知识学习过程的后期能数倍地放大之前的知识负债，滚雪球一般的负债积累起来之后，整个知识循环就会被打破，变成纯粹的债务危机，任何一个节点都会成为债务危机的导火索。</p>
+<p><a href="https://imgtu.com/i/cxb5y4" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/25/cxb5y4.png" alt="cxb5y4.png"></a></p>
+<p>为了压缩知识负债，避免产生规模较广泛的知识债务危机，可以采用将精益管理的思想运用到实际的学习过程中 —-  在知识收割之前就需要了解学习知识所需要的其他知识关联节点，在将所需知识准查阅完成后，通过这一轮循环的可以练习将这部分知识完整地加强巩固，并训练成有效的可生产的能力，然而精益化所带来的延迟是相当长时间的，各个行业知识结点之间的关联层级会相对比较深，所需的知识和技能要求就比较广泛，当一个节点不够通畅时，就会耗费大量时间来疏通节点，然而这个节点还是知识系统中的渺小存在。</p>
+<p>在知识的正向反馈过程中，行业背景会成为新知识的杠杆。旧知识在生产中不断的练习加以深刻，同时会有新的碎片化知识的需求来解决遇到的问题。由于是在同行业背景下，碎片化知识的学习达到一个高度的上升之后，各个碎片化的节点会通过已有的知识贯穿起来，拼图也变得逐渐明朗，在一段时间的沉淀之后，就会很容易得把碎片化知识融入到已有的知识结构之中。但是在对于跨行业知识的正向反馈过程中，不断拼凑起来的拼图，在知识负债的压力下，很容易会让热油掀翻整个拼图拼盘的冲动，因为拼图只是一块一块地摆在了某个点上，没有跟其他拼图的拼接。知识的孤岛效应会加剧各个知识点之间的分离，大脑会将长时间不与之关联的孤岛丢弃掉，负面的正向反馈带来的是各种资源的浪费，因此在学习行业之外知识时，没有大量的资源投入是很难对新行业产生较为深刻的认知。</p>
+<p>知识的时间杠杆是一个更长周期的知识效果反馈机制。知识学习和技能习得后，在实际应用的场景中，知识的关联会在应用中加强，知识的时间杠杆会在知识学习和应用的时间越久，越会凸显出来。时间杠杆的最终效果，是将知识培养为直觉，直觉反应在《思考快与慢中》，遇到事情不需要经过过多的意识判断，很短时间地快速做出反应，就如同走路时不需要反复思考要买那只脚一样地自然。</p>
+<p>知识还存在一个交流的杠杆，在人与人的交流沟通中，你能正方向缩短知识学习各环节的延迟，通过交流学习他人的经验，应用到自己当前的学习过程中，把他人以得出的结果和步骤，在自己实践中加以实验，优化自己学习的目标与方向。因此，社会中的教育就是杠杆的重要组成部分，通过面对面的对知识的讲解，消灭学习中的问题，有目标的加以训练，加上学生的自控力，使整个学习过程加速运行起来，正向反馈于学习者自身。</p>
+<h3 id="思考：公平竞争的教育制度"><a href="#思考：公平竞争的教育制度" class="headerlink" title="思考：公平竞争的教育制度"></a>思考：公平竞争的教育制度</h3><p>现在各地的父母都在努力把自己孩子送上所谓的“名校”，从幼儿园“名校”到高中“名校”，这些“名校”之间的差距是什么呢？分析来看，是先有了优秀的学生，有了较高的中榜率；还是先有了高级教师，才培养出高中榜率的学生？当然，也存在部分高级教师带动了部分优秀学生的情况，但总体来说，最终的升学率还是取决于个体对知识的掌握情况，学生掌握了升学阶段所必要的解决问题的能力，才会有升学的把握，这里暂不提学生在学习过程中产生的感性情绪、心情还有成长过程中出现的生理上的问题，我觉得未来中国要想有更强的国际竞争力，就需要将知识学习的过程公平化，让每一个学生个体所能接触到的知识源是相同的。</p>
+<p>曾有一位腾讯的员工，在贵州坚持了六年时间，把几百万个村子连上了网络，让村子里的孩子在学习知识的课堂上，跨越了空间上的限制，连通深圳市明德学校的课堂，让优质的知识能通过互联网平台无死角地传播到每一个乡村的课堂，传入每一位学龄儿童的脑子里。</p>
+<p>这是互联网能给知识领域的赋能，可完全忽视掉空间和时间的约束，极大程度地传播了人类的知识。现在网络上的各种平台，如 Coursera、网易公开课等等，提供了各个大学、著名教授的课程，甚至能为无法上大学的学生提供了学位教育。以上的平台已经成年人教育的多个教育阶段验证了其可行性，在义务教育、通识教育阶段，为何不将教育资源整合，通过互联网来给不同地区的学生提供同样优质的知识和对知识的讲解，让所有待接受教育的学生处在相同的竞争环境之下，学校提供有效的学生与老师的沟通方式，建设层级化的课程体系，由班主任和各科老师主持主要的班级学科建设工作激发学生的学习参与感，为学生解答疑惑组织学习。还可以在学生学习完成后，将学到的知识点与问题点通过各种方式与其他的同学进行交流，既能获得朋友也能弥补知识上的不足，充分发挥互联网信息传递上的优势，提供更为公平的教育竞争局面。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>知识的学习不是一蹴而就的，知识最终所要实现的效果是变成思维中的直觉，在遇到类似问题后大脑就能直接将所学到知识显性化输出，长时间的练习能加快直觉的形成。然而，知识并不是独立存在的，对问题的分析能力就是知识脉络的作用，多种知识相互渗透，才能得出对问题客观的分析。</p>
+<p>都说是“你知道的越多，你不知道的就越多”，知识的领域就是通过一点点的边际探索拓展开的，实际应用中会因各学科的交叉，打开新的领域，在探索新领域的过程中，也会因为遇到的当前领域相交叉的知识，所以知识是永远都无法穷尽的。也有人说“吾生而有涯而学而无涯，以有涯而逐无涯 则殆矣”，我觉得这句话需要放在庄子当时的场景中才能进一步分析，用这句话来作为逃避知识学习的借口只能是自己安慰自己，逃避知识的学习，会产生一个正向的消极循环：不懂 - 不学习 - 加强了不懂 - 再次不学习 … 不断地加强对不懂知识的认知，对知识的学习产生负面的态度。我以胡适先生《知识的准备》一文中摘一段作为此文的结尾，共勉：在这一个值得纪念的日子里，你们该花费几分钟，为你们自己列一个知识的清单，假如没有一两个值得你们下决心解决的知识难题，就不轻易步入这个大世界。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/lost-myself/">迷失</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
