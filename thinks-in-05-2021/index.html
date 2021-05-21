@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="刘一峰">
+
+
+    <meta name="subtitle" content="LiuYifeng's personal website">
+
+
+    <meta name="description" content="刘一峰的个人博客">
+
+
+    <meta name="keywords" content="刘一峰,博客,刘一峰博客,刘一峰的个人博客,我是刘一峰,刘一峰的博客,刘一峰的个人网站,刘一峰的个人网站">
+
+
+<title>最近在思考的几个问题 | 知墨 ｜ 刘一峰的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">知墨 - 刘一峰的个人博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">知墨 - 刘一峰的个人博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">最近在思考的几个问题</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">刘一峰</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2021-05-21&nbsp;&nbsp;11:05</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="知识的落地与积累"><a href="#知识的落地与积累" class="headerlink" title="知识的落地与积累"></a>知识的落地与积累</h2><p>最近察觉到，平时读了许多书，也很用功地在读书，可为什么一到了平日工作就忘了呢？</p>
+<p>把知识应用到日常工作学习中，的确是一件不容易的事，先不说学到的知识与当前的工作生活的契合度，且说对知识记忆的程度，就很在关键时候回忆起来。</p>
+<p>我读书的时间越来越零碎，原本会花大块的时间来阅读和思考，现在只有一点儿零碎的时间来读书，思考也停在浅层。通常是在睡前、通勤路上和空闲时间能读一点，有时候上次读到的内容跟翻开书到书签的位置，还接不上茬，得倒回去好多页才能隐约想起来之前的内容。</p>
+<p>我看到很多人会在年底发状态说今年读了几十本书，我不敢说对书的理解如何，但有一点可以肯定，就是并不能实验书本中所提到的理念和观点，一眼掠过觉得并不能理解或持有否定态度，就不假思索地翻过去，再也不会回头想想。那这种读书又有何用呢？只是熊瞎子掰玉米图个欢消耗下时间而已。</p>
+<p>知识最重要的就是积累，片面的知识无法支撑起整个人背后行为的结构化体系，也不能给人一个坚定信念的理论支持。而我现在就卡在<code>没时间读书-&gt;没时间思考-&gt;工作缺乏指导</code>的死循环中，而我也了解这个循环的破局点就是在知识的获取，只要有了持续不断的知识输入，打通各个只是孤岛的连结，就能将知识熟练运用在任意的工作中 —— 并不是说应用浅显易见的知识，而是知识背后的思考体系和结构化体系。</p>
+<h2 id="团队管理中的难点"><a href="#团队管理中的难点" class="headerlink" title="团队管理中的难点"></a>团队管理中的难点</h2><p>在工作中，我给予了团队中所有人员充足的空间，也尽量不会安排过多的工作，来保证每一个人产出的质量。但结果却差强人意，在OKR分解完成之后，有的人会先选择简单的任务，花上的时间边摸鱼边工作，最后不得不加班完成工作任务；也有的人会推脱工作的不合理性，把工作甩到其他部门 … 很少有人按部就班地以任务为导向的工作。</p>
+<p>就以绩效来讲，每个人的绩效成果在最后评价时都会有不错的得分，因为绩效更多地是以工作任务的结果为导向，对于那些平日里努力工作的人和摸鱼的人的最终评价居然不相上下，这就让那些平日里工作努力的人有很不舒服的体验。</p>
+<p>综上来说，团队管理需要有一种更为合理的管理技巧，在效率层面再发挥每个人优势，不至于让员工一年到头一无所获反过来怪罪领导和公司。而不同的行业背景的管理方法肯定不同，其协作的方式也不同，这就对跨部门团队有了很高的要求。软件往往不可能不依赖业务而存在，只要业务存在就会有不同部门人的参与，软件就是各个职能部门之间的业务融合剂，这就对软件的管理者提出了更高的要求。</p>
+<p>一般来说，管理者往往是行业中比较有经验的人，才能做到管理团队方向和发展步调，这也就要求管理者在专业领域要有不断地精进才能站得更高。这时，对其他方面的管理能力就会变成短板，管理者在遇到问题后就会急于去寻找解决方案然后鲁莽地应用到工作中 —— 由于决策的特点往往是延迟的，而这种延迟是先带来好的结果然后才会变得很糟。行业内的经验并不一定能转化为管理能力，行业内的经验带来的是看待事问题的深度，管理能力是让大家分享不同的角度达到较为客观有效的解决方案。这就给企业出难题了，究竟是用老员工晋升的方式呢，还是用空降职业经理人的方式呢？</p>
+<p>就我们山东人来说，老祖宗说的就算是对的，长辈说的就是对的，领导说的就是对的，在这种习俗中成长起来的我们，都会不加思考的去听从领导的安排，而不去质疑去思考这安排的正确性。这也给一些管理者带来了管理上的困难：难以成长为集体思考的团队，所有决策都会压在管理层上面，管理层的思考不全面就会影响整个团队的绩效。</p>
+<h2 id="关于如何读书"><a href="#关于如何读书" class="headerlink" title="关于如何读书"></a>关于如何读书</h2><p>最近我看了Netflix制作的比尔盖茨的纪录片，里面有很多盖茨先生读书的镜头，仔细看都能看到盖茨先生一边读书一边用纸笔记录重点和思考过程，然后我也试了一下，感觉相比起之前读完书再做回顾，这种读书的方式能产生更深刻的记忆，后面我会边实践边更新我的读书学习过程。<br>我觉得天天抱着书一直在往脑子里灌输，没有一点的思考空闲时，就会容易出现左耳朵进右耳朵出的情况，因为这种信息量太大了，大脑在达到负荷的顶峰的时候，就没有能力继续去处理信息，只能左耳进右耳出。还有一种情况是在读一些完全不需要费脑子的信息，消费时间，大脑的使用率一直是非常低的持平状态，也会是左耳朵进右耳朵出。</p>
+<p>所以说，在大量信息输入的时候，为了保持记忆能力，需要将关键信息点做好记录，在读书的思考时间中去整理读书产生的知识点的关系，再重新整理一边书中知识，在思考过程中形成结构化知识。</p>
+<p>我有时候在给别人推荐书目的时候，或者空余时间我在读书被别人看到时，就会听到很多人说，到了30岁就完全没有精力去学习，脑力已经退化了，然后对我说一句佩服之后就继续躺平。我对这观点一直持有疑问，比如巴菲特在90岁高龄依然天天读书学习，被芒格成为“Learning<br>”，反而为何一个刚到30岁的普通人就脑力退化了呢？</p>
+<p>我简单读了Caroline Pratt的《I Learn From Children》，下面是一段节选</p>
+<blockquote>
+<p>A normal human beings are born with a powerful urge to learn. Almost all of them lost this urge, even before they have reached maturity. It is only few … who are so constituted that lack of learning becomes a nuisance. This is perhaps the most insidious of human tragedies.</p>
+</blockquote>
+<p>无独有偶，Edward Thorndike的研究中，也得出一个结论：</p>
+<blockquote>
+<p>人在18-20岁时处于学习能力的极快速增长阶段，在20-35岁学习能力开始下降，这种下降是相对于18-20岁时的比较，但依然是处于上升阶段，在35岁时学习能力还是会高出20岁许多，这种状态会保持到人的衰老年龄，而到了80岁，学习能力最多会下降到35岁时的水平。</p>
+</blockquote>
+<p>所以，读书和学习对我来说应该是一个很长期的事情，知识需要长期积累才能产生关联的lollapalooza效应。过于功利化追求知识短期的回报，可能在会在一段时间内事情会向好发展，但过了这一段时间之后事情就会掉落深渊 – 因为没有足够的知识存量来处理复杂问题。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%80%9D%E8%80%83/"># 思考</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/process-of-learning/">论知识收获的反馈过程</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 刘一峰 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
